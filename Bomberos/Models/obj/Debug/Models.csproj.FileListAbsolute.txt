@@ -1,0 +1,12 @@
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Models\bin\Debug\Models.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Models\bin\Debug\Models.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Models\obj\Debug\Models.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Models\obj\Debug\Models.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Models\bin\Debug\Models.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Models\bin\Debug\Models.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Models\obj\Debug\Models.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Models\obj\Debug\Models.pdb

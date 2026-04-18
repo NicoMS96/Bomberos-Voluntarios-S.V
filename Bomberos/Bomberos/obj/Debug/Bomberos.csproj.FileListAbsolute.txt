@@ -1,0 +1,158 @@
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\bin\Debug\Bomberos.exe.config
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\bin\Debug\Bomberos.exe
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\bin\Debug\Bomberos.pdb
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.Properties.Resources.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.GenerateResource.cache
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CoreCompileInputs.cache
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.exe
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.pdb
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formPrincipal.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAreas.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formReuniones.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formIngreso.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formEmergencia.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarTarea.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarReunion.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAsistencias.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formPersonal.resources
+C:\Users\nicoc\source\repos\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\bin\Debug\Bomberos.exe.config
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\bin\Debug\Bomberos.exe
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\bin\Debug\Bomberos.pdb
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarReunion.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarTarea.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAreas.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formAsistencias.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formEmergencia.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formIngreso.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formPersonal.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formPrincipal.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formReuniones.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.Properties.Resources.resources
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.GenerateResource.cache
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CoreCompileInputs.cache
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.exe
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.pdb
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
+C:\Users\ENTER\Desktop\AS 2024\Bomberos\Bomberos\obj\Debug\Bomberos.formLogin.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\bin\Debug\Bomberos.exe.config
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\bin\Debug\Bomberos.exe
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\bin\Debug\Bomberos.pdb
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarReunion.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarTarea.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAreas.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formAsistencias.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formEmergencia.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formIngreso.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formLogin.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formPersonal.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formPrincipal.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.formReuniones.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.Properties.Resources.resources
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.GenerateResource.cache
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CoreCompileInputs.cache
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.exe
+C:\Users\nicoc\Desktop\AS\ultimo\Bomberos\Bomberos\obj\Debug\Bomberos.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarReunion.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarTarea.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAreas.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formAsistencias.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formEmergencia.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formIngreso.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formLogin.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formPersonal.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formPrincipal.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.formReuniones.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.Properties.Resources.resources
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.GenerateResource.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CoreCompileInputs.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.exe
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Bomberos.exe.config
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Bomberos.exe
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Bomberos.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Logica.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Datos.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Logica.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Datos.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CopyComplete
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Models.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Bomberos\bin\Debug\Models.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Bomberos.exe.config
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Bomberos.exe
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Bomberos.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Logica.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Models.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Datos.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Logica.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Models.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Datos.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarReunion.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarTarea.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAreas.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAsistencias.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formEmergencia.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formIngreso.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formLogin.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formPersonal.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formPrincipal.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formReuniones.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.Properties.Resources.resources
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.GenerateResource.cache
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CoreCompileInputs.cache
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CopyComplete
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.exe
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Bomberos.exe.config
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Bomberos.exe
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Bomberos.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Logica.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Models.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Datos.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Logica.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Models.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Datos.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarReunion.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarTarea.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAreas.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAsistencias.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formEmergencia.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formIngreso.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formLogin.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formPersonal.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formPrincipal.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formReuniones.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.Properties.Resources.resources
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.GenerateResource.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CoreCompileInputs.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CopyComplete
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.exe
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.pdb

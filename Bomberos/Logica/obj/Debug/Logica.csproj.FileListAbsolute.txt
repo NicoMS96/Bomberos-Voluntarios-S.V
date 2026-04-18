@@ -1,0 +1,33 @@
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\bin\Debug\Logica.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\bin\Debug\Logica.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\bin\Debug\Datos.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\bin\Debug\Datos.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\obj\Debug\Logica.csproj.CopyComplete
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\obj\Debug\Logica.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\obj\Debug\Logica.pdb
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\bin\Debug\Models.dll
+D:\DISCO C\Instituto\AS 2024 BOMBEROS\28 act\Bomberos\Logica\bin\Debug\Models.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\bin\Debug\Logica.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\bin\Debug\Logica.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\bin\Debug\Datos.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\bin\Debug\Models.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\bin\Debug\Datos.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\bin\Debug\Models.pdb
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.dll
+C:\Users\ENTER\Desktop\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\bin\Debug\Logica.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\bin\Debug\Logica.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\bin\Debug\Datos.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\bin\Debug\Models.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\bin\Debug\Datos.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\bin\Debug\Models.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.csproj.CopyComplete
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Logica\obj\Debug\Logica.pdb

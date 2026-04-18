@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0281ECE4-B01A-431F-91CD-7EE538FE465E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bomberos</RootNamespace>
+    <AssemblyName>Bomberos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAdministracion.Designer.cs">
+      <DependentUpon>formAdministracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAgregarModificarEmergencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAgregarModificarEmergencia.Designer.cs">
+      <DependentUpon>formAgregarModificarEmergencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAgregarModificarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAgregarModificarPersonal.Designer.cs">
+      <DependentUpon>formAgregarModificarPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAgregarModificarReunion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAgregarModificarReunion.Designer.cs">
+      <DependentUpon>formAgregarModificarReunion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAgregarModificarTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAgregarModificarTarea.Designer.cs">
+      <DependentUpon>formAgregarModificarTarea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAreas.Designer.cs">
+      <DependentUpon>formAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAsistencias.Designer.cs">
+      <DependentUpon>formAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formEmergencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEmergencia.Designer.cs">
+      <DependentUpon>formEmergencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formIngreso.Designer.cs">
+      <DependentUpon>formIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPersonal.Designer.cs">
+      <DependentUpon>formPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPrincipal.Designer.cs">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formReuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formReuniones.Designer.cs">
+      <DependentUpon>formReuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAdministracion.resx">
+      <DependentUpon>formAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAgregarModificarEmergencia.resx">
+      <DependentUpon>formAgregarModificarEmergencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAgregarModificarPersonal.resx">
+      <DependentUpon>formAgregarModificarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAgregarModificarReunion.resx">
+      <DependentUpon>formAgregarModificarReunion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAgregarModificarTarea.resx">
+      <DependentUpon>formAgregarModificarTarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAreas.resx">
+      <DependentUpon>formAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAsistencias.resx">
+      <DependentUpon>formAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formEmergencia.resx">
+      <DependentUpon>formEmergencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formIngreso.resx">
+      <DependentUpon>formIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPersonal.resx">
+      <DependentUpon>formPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPrincipal.resx">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formReuniones.resx">
+      <DependentUpon>formReuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2024-08-27 010954.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{b69db36b-7b67-492f-b240-27f2847d157d}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{b1710da3-1003-4dab-b5ad-662280a460ff}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
