@@ -17,12 +17,15 @@ namespace Bomberos
         string accion;
         BomberosLogica bomberos;
         Form1 contenedor { get; set; }
+        formPersonal formPersonalOrigen { get; set; }
+
         int codigoBombero;
-        public formAgregarModificarPersonal(string accion, int codigoBombero, Form1 principal)
+        public formAgregarModificarPersonal(string accion, int codigoBombero, Form1 principal, formPersonal origen)
         {
             contenedor = principal;
             this.codigoBombero = codigoBombero;
             this.accion = accion;
+            this.formPersonalOrigen = origen;
             InitializeComponent();
             lblTitulo.Text = accion=="agregar" ? "NUEVO BOMBERO" : "MODIFICAR BOMBERO";
             bomberos = new BomberosLogica(); 
@@ -123,9 +126,7 @@ namespace Bomberos
         {
 
             if (Validacion())
-            {
-                formPersonal FormPersonal = new formPersonal(contenedor);
-
+            { 
                 Bombero Bombero = new Bombero()
                 {
                     Nombre = txtNombre.Text,
@@ -148,9 +149,6 @@ namespace Bomberos
                         {
                             int confirma = bomberos.NuevoBombero(Bombero);
                             MessageBox.Show("Bombero registrado exitosamente.", "Notificación");
-
-                            FormPersonal.ActualizarGrilla(); 
-                            contenedor.AbrirFormulario(new formPersonal(contenedor));
                             this.Close();
                         }
                     }
@@ -162,12 +160,9 @@ namespace Bomberos
                         if (resultado == DialogResult.Yes)
                         {
                             int confirma = bomberos.ModificarBombero(Bombero, codigoBombero);
-
-                            FormPersonal.ActualizarGrilla();
-
                             MessageBox.Show("Bombero modificado exitosamente.", "Notificación");
- 
-                         }
+                            this.Close(); 
+                        }
                     }
                 }
                 catch (Exception ex)

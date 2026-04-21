@@ -55,27 +55,31 @@ namespace Bomberos
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
+        { 
             int tareaPrId = Convert.ToInt32(cmbTareasPredeterminadas.SelectedValue);
             string detalles = txtTarea.Text;
-            int fechaId = tareas.ObtenerFechaId(DateTime.Now);
-
+             
             Tarea tarea = new Tarea()
             {
                 TareasPredeterminadaId = tareaPrId,
                 Observaciones = detalles,
-                FechaId = fechaId,
-                CodigoBombero=codigoBombero, 
+                Fecha = DateTime.Now,
+                CodigoBombero = codigoBombero,
                 sumaPunto = 1
             };
-
-            int resultado = tareas.GuardarTarea(tarea);
-
-            string mensaje = resultado == 1 ? "Tarea registrada correctamente." : "Algo salió mal, no se pudo registrar la tarea.";
-            
-            MessageBox.Show(mensaje, "Notificación");
-
-            this.Close();
+             
+            string error = tareas.GuardarTarea(tarea);
+            if (error == null)
+            {
+                MessageBox.Show("Tarea registrada correctamente.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: " + error);
+            }
+             
+            this.Close(); 
         }
 
         private void formAgregarModificarTarea_Resize(object sender, EventArgs e)

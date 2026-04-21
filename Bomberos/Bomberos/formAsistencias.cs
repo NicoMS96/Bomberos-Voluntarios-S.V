@@ -19,33 +19,7 @@ namespace Bomberos
             InitializeComponent();
             asistLogica = new AsistenciasLogica();
         }
-
-        public void ejemplo()
-        {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Nombre y Apellido");
-
-            for (int i = 1; i <= 31; i++)
-            {
-                dt.Columns.Add(i.ToString());
-            }
-
-
-            dt.Columns.Add("Total Horas");
-
-
-            dt.Columns.Add("Total Puntos");
-            dt.Rows.Add("Juan Pérez", "1", "A", "1", "1", "0", "1", "A", "1", "1", "0", "1", "A", "1", "1", "0", "1", "A", "1", "1", "0", "1", "A", "1", "1", "0", "1", "A", "1", "1", "0", "1", 40, 19);
-            dt.Rows.Add("Bombero 2", "0", "A", "1", "1", "0", "1", "A", "1", "0", "0", "1", "A", "A", "1", "0", "1", "A", "1", "A", "0", "1", "A", "1", "1", "1", "1", "A", "1", "1", "0", "1", 32, 16);
-            dgvAsistencias.DataSource = dt;
-            dgvAsistencias.Columns[0].Width = (int)(dgvAsistencias.Width * 0.10);
-            for (int i = 1; i <= 31; i++)
-            {
-                dgvAsistencias.Columns[i].Width = (int)(dgvAsistencias.Width * 0.026);
-                dgvAsistencias.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-        }
+         
 
         public void Institucion()
         {

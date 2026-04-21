@@ -86,6 +86,8 @@ namespace Bomberos
 
         }
 
+        
+
         public void MarcarSalida(int codigoBombero)
         {
             string mensajeError = asistencias.RegistrarSalida(codigoBombero);
@@ -93,11 +95,14 @@ namespace Bomberos
             if (!string.IsNullOrEmpty(mensajeError))
             {
                 errorProvider1.SetError(txtCodigo, mensajeError);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Salida registrada exitosamente.", "Confirmación");
-            }
+
+            // Salida registrada → mostrar formulario de tarea
+            formAgregarModificarTarea tarea = new formAgregarModificarTarea(codigoBombero);
+            tarea.ShowDialog();
+
+            MessageBox.Show("Salida registrada exitosamente.", "Confirmación");
         }
 
         public void MarcarEntrada(int codigoBombero)
@@ -105,22 +110,9 @@ namespace Bomberos
             string mensajeError = asistencias.RegistrarAsistencia(codigoBombero);
 
             if (!string.IsNullOrEmpty(mensajeError))
-            {
                 errorProvider1.SetError(txtCodigo, mensajeError);
-                return;
-            }
-
-            bool tareaPendiente = tareas.TareaPendiente(codigoBombero);
-
-            if (tareaPendiente)
-            {
-                formAgregarModificarTarea tarea = new formAgregarModificarTarea(codigoBombero);
-                tarea.ShowDialog();
-            }
             else
-            {
-                MessageBox.Show("El bombero ingresó, no tiene tarea pendiente.");
-            }
+                MessageBox.Show("Ingreso registrado exitosamente.", "Confirmación");
         }
     }
 }

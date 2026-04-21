@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,69 +11,103 @@ namespace Datos
 {
     public class AsistenciasDatos
     {
-        Conexion cn;
-        public AsistenciasDatos()
+        public List<BomberoAsistencia> ObtenerAsistenciaInstitucion()
         {
-            cn = new Conexion();
+            var lista = new List<BomberoAsistencia>();
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"
+                SELECT 
+                    b.codigoBombero,
+                    CONCAT(b.nombre, ' ', b.apellido) AS nombreCompleto,
+                    CAST(rh.fechaEntrada AS DATE)      AS fecha,
+                    CASE 
+                        WHEN rh.fechaSalida IS NOT NULL 
+                        THEN DATEDIFF(MINUTE, rh.fechaEntrada, rh.fechaSalida) / 60.0
+                        ELSE NULL 
+                    END AS horasTrabajadas
+                FROM RegistroHoras rh
+                INNER JOIN Bomberos b ON b.codigoBombero = rh.codigoBombero
+                ORDER BY b.codigoBombero, rh.fechaEntrada";
+
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
+                    oConexion.Open();
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new BomberoAsistencia()
+                            {
+                                CodigoBombero = Convert.ToInt32(dr["codigoBombero"]),
+                                NombreCompleto = dr["nombreCompleto"].ToString(),
+                                Fecha = Convert.ToDateTime(dr["fecha"]),
+                                HorasTrabajadas = dr["horasTrabajadas"] == DBNull.Value
+                                                  ? 0
+                                                  : Convert.ToSingle(dr["horasTrabajadas"])
+                            });
+                        }
+                    }
+                }
+            }
+            catch { lista = new List<BomberoAsistencia>(); }
+            return lista;
         }
 
-        public DataRow VerificarFecha(DateTime fecha)
+        public bool RegistrarEntrada(int codigoBombero)
         {
-            string query = "SELECT * FROM Fechas WHERE fecha='"+fecha+"'";
-
-            return cn.ObtenerRegistro(query);
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"INSERT INTO RegistroHoras (codigoBombero, fechaEntrada) 
+                             VALUES (@codigoBombero, GETDATE())";
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.Parameters.AddWithValue("@codigoBombero", codigoBombero);
+                    oConexion.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch { return false; }
         }
-        public int RegistrarFecha(DateTime fecha)
+         
+        public bool RegistrarSalida(int codigoBombero)
         {
-            string query = $"INSERT INTO Fechas VALUES('{fecha:dd/MM/yyyy}')";
-            return cn.EjecutarAccionConResultado(query);
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"UPDATE RegistroHoras 
+                             SET fechaSalida = GETDATE()
+                             WHERE codigoBombero = @codigoBombero 
+                             AND fechaSalida IS NULL";
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.Parameters.AddWithValue("@codigoBombero", codigoBombero);
+                    oConexion.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch { return false; }
         }
-        public int ObtenerFechaId(DateTime fecha)
+         
+        public bool EstaAdentro(int codigoBombero)
         {
-            string query = "SELECT fechaId FROM Fechas WHERE fecha='" + fecha + "'";
-
-            return cn.EjecutarAccionConResultado(query);
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"SELECT COUNT(*) FROM RegistroHoras 
+                             WHERE codigoBombero = @codigoBombero 
+                             AND fechaSalida IS NULL";
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.Parameters.AddWithValue("@codigoBombero", codigoBombero);
+                    oConexion.Open();
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+            catch { return false; }
         }
-
-        public int RegistrarAusencias(Asistencia a)
-        { 
-            string query = $"INSERT INTO Asistencias VALUES('{a.AsistenciaValor}','{a.FechaId}',{a.TipoAsistenciaId},{a.CodigoBombero})";
-            return cn.EjecutarAccion(query);
-        }
-
-        public int ActualizarAsistencia(Asistencia asiste)
-        { 
-            string query = $@"UPDATE Asistencias SET asistencia='{asiste.AsistenciaValor}', tipoAsistenciaId={asiste.TipoAsistenciaId} 
-                            WHERE codigoBombero = {asiste.CodigoBombero} AND fechaId={asiste.FechaId}";
-            return cn.EjecutarAccion(query);
-        }
-
-        public int RegistrarHora(Asistencia asiste, char tipo) 
-        {
-            string query = $"INSERT INTO RegistroHoras VALUES({asiste.FechaId}, {asiste.CodigoBombero}, GETDATE(), '{tipo}')";
-            return cn.EjecutarAccion(query);
-        }
-
-        public DataRow ObtenerUltimoRegistro(int codigoBombero)
-        {
-            string query = $"SELECT TOP 1 tipo, Hora, FechaId FROM RegistroHoras WHERE CodigoBombero = {codigoBombero} ORDER BY Hora DESC ";
-            return cn.ObtenerRegistro(query);
-        }
-
-        public DataTable AsistenciaInstitucion()
-        {
-            string query = @"SELECT b.codigoBombero, CONCAT(b.nombre, ' ',b.apellido) AS 'NOMBRE Y APELLIDO', 
-                           DAY(f.fecha) AS DIA, MONTH(f.fecha) AS MES, f.fechaId, rh.registroId, 
-                           rh.hora, rh.tipo, ta.tipoAsistencia, a.asistencia 
-                            FROM Bomberos b 
-                            INNER JOIN Asistencias a ON b.codigoBombero=a.codigoBombero
-                            INNER JOIN Fechas f ON f.fechaId=a.fechaId
-                            INNER JOIN TipoAsistencia ta ON ta.tipoAsistenciaId=a.tipoAsistenciaId
-                            INNER JOIN RegistroHoras rh ON rh.fechaId=f.fechaId
-                            ORDER BY b.codigoBombero, f.fechaId, rh.hora";
-            return cn.ObtenerRegistros(query);
-        }
-
-
     }
 }

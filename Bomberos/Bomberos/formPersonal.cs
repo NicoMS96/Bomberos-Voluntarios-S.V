@@ -26,8 +26,9 @@ namespace Bomberos
 
         private void btnNuevoBombero_Click(object sender, EventArgs e)
         {
-            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal("agregar",0,contenedor);
+            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal("agregar",0,contenedor,this);
             formAgregarPersonal.ShowDialog();
+            ActualizarGrilla();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -58,8 +59,9 @@ namespace Bomberos
         private void btnModificar_Click(object sender, EventArgs e)
         {
             int codigoBombero = Convert.ToInt32(dgvPersonal.SelectedRows[0].Cells[0].Value);
-            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal("modificar", codigoBombero,contenedor);
+            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal("modificar", codigoBombero,contenedor,this);
             formAgregarPersonal.ShowDialog();
+            ActualizarGrilla(); 
         }
 
         private void formPersonal_Load(object sender, EventArgs e)

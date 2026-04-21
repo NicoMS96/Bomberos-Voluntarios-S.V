@@ -24,22 +24,20 @@ namespace Logica
             return tareas.ObtenerTareasPredeterminadas(areaId);
         }
 
-        public int ObtenerFechaId(DateTime fecha)
+        
+        public string GuardarTarea(Tarea tarea)
         {
-            return asistencias.ObtenerFechaId(fecha);
+            try
+            {
+                tareas.GuardarTarea(tarea);
+                return null; // null = éxito
+            }
+            catch (Exception ex)
+            {
+                return ex.Message; // devuelve el error como string
+            }
         }
-
-        public int GuardarTarea(Tarea tarea)
-        {
-            return tareas.GuardarTarea(tarea);
-        }
-
-        public bool TareaPendiente(int codigoBombero)
-        { 
-            int fechaId = ObtenerFechaId(DateTime.Now);
-            bool result = tareas.TareaPendiente(codigoBombero, fechaId) == null ? true : false;
-            return result;
-        }
+         
 
         public DataTable ObtenerTareas(int areaId)
         {

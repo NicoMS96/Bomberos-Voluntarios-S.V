@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
+
 namespace Datos
 {
     public class Conexion
     {
         SqlConnection Conector;
-
+        public static string cn = ConfigurationManager.ConnectionStrings["cadena"].ToString();
+        
         //Luego se instancia en el constructor
         public Conexion()
         {

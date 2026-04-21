@@ -9,7 +9,7 @@ namespace Models
     public class Tarea
     {
         public int TareaId { get; set; }                  // Llave primaria
-        public int FechaId { get; set; }              // Llave foránea con `fechas` 
+        public DateTime Fecha { get; set; }              // Llave foránea con `fechas` 
         public int TareasPredeterminadaId { get; set; }   // Llave foránea con `TareasPredeterminadas`
         public int CodigoBombero { get; set; }           // Llave foránea con `Bomberos`
         public string Observaciones { get; set; }        // Observaciones sobre la tarea

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,17 +24,28 @@ namespace Datos
             return cn.ObtenerRegistros(query);
         }
 
-        public int GuardarTarea(Tarea t)
-        {
-            string query = $"INSERT INTO Tareas VALUES({t.TareasPredeterminadaId},{t.CodigoBombero},'{t.Observaciones}','{t.FechaId}',{t.sumaPunto})";
-            return cn.EjecutarAccion(query);
+        public bool GuardarTarea(Tarea t)
+        { 
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                string query = @"INSERT INTO Tareas 
+                 (tareasPredeterminadaId, codigoBombero, observaciones, fecha, sumaPunto)
+                 VALUES
+                 (@tareasPredeterminadaId, @codigoBombero, @observaciones, @fecha, @sumaPunto)";
+                var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@tareasPredeterminadaId", t.TareasPredeterminadaId);
+                    cmd.Parameters.AddWithValue("@codigoBombero", t.CodigoBombero);
+                    cmd.Parameters.AddWithValue("@observaciones", t.Observaciones);
+                    cmd.Parameters.AddWithValue("@fecha", t.Fecha.Date); 
+                    cmd.Parameters.AddWithValue("@sumaPunto", t.sumaPunto);
+
+                    oConexion.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            
         }
 
-        public DataRow TareaPendiente(int codigoBombero, int fechaId)
-        {
-            string query = $"SELECT * FROM Tareas WHERE codigoBombero={codigoBombero} AND fechaId={fechaId}";
-            return cn.ObtenerRegistro(query);
-        }
 
         public DataTable ObtenerTareas(int areaId)
         {
