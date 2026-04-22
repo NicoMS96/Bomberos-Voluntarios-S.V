@@ -45,11 +45,13 @@ namespace Bomberos
             // 
             // btnSalida
             // 
-            this.btnSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnSalida.FlatAppearance.BorderSize = 0;
+            this.btnSalida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalida.Location = new System.Drawing.Point(850, 137);
+            this.btnSalida.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSalida.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalida.Location = new System.Drawing.Point(652, 264);
             this.btnSalida.Name = "btnSalida";
             this.btnSalida.Size = new System.Drawing.Size(200, 71);
             this.btnSalida.TabIndex = 4;
@@ -59,11 +61,13 @@ namespace Bomberos
             // 
             // btnIngreso
             // 
-            this.btnIngreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnIngreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnIngreso.FlatAppearance.BorderSize = 0;
+            this.btnIngreso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngreso.Location = new System.Drawing.Point(642, 137);
+            this.btnIngreso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngreso.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnIngreso.Location = new System.Drawing.Point(444, 264);
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Size = new System.Drawing.Size(200, 71);
             this.btnIngreso.TabIndex = 5;
@@ -73,11 +77,13 @@ namespace Bomberos
             // 
             // btnSemana
             // 
-            this.btnSemana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSemana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.btnSemana.FlatAppearance.BorderSize = 0;
+            this.btnSemana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSemana.Location = new System.Drawing.Point(642, 232);
+            this.btnSemana.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSemana.Location = new System.Drawing.Point(444, 341);
             this.btnSemana.Name = "btnSemana";
             this.btnSemana.Size = new System.Drawing.Size(408, 71);
             this.btnSemana.TabIndex = 7;
@@ -90,17 +96,19 @@ namespace Bomberos
             this.lblDia.AutoSize = true;
             this.lblDia.BackColor = System.Drawing.Color.Transparent;
             this.lblDia.Font = new System.Drawing.Font("Roboto Condensed", 30.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.lblDia.Location = new System.Drawing.Point(142, 159);
             this.lblDia.Name = "lblDia";
             this.lblDia.Size = new System.Drawing.Size(271, 49);
             this.lblDia.TabIndex = 2;
-            this.lblDia.Text = "Domingo 27/08";
+            this.lblDia.Text = "Domingo 01/01";
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Roboto Condensed", 80.75F, System.Drawing.FontStyle.Bold);
+            this.lblHora.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblHora.Location = new System.Drawing.Point(52, 29);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(445, 130);
@@ -114,13 +122,15 @@ namespace Bomberos
             // 
             // btnReuniones
             // 
-            this.btnReuniones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnReuniones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
             this.btnReuniones.FlatAppearance.BorderSize = 0;
+            this.btnReuniones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(79)))));
             this.btnReuniones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReuniones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReuniones.Location = new System.Drawing.Point(489, 382);
+            this.btnReuniones.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnReuniones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnReuniones.Location = new System.Drawing.Point(490, 442);
             this.btnReuniones.Name = "btnReuniones";
-            this.btnReuniones.Size = new System.Drawing.Size(240, 71);
+            this.btnReuniones.Size = new System.Drawing.Size(220, 57);
             this.btnReuniones.TabIndex = 9;
             this.btnReuniones.Text = "REUNIONES DE AREAS";
             this.btnReuniones.UseVisualStyleBackColor = false;
@@ -128,13 +138,15 @@ namespace Bomberos
             // 
             // btnAdministracion
             // 
-            this.btnAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
             this.btnAdministracion.FlatAppearance.BorderSize = 0;
+            this.btnAdministracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(79)))));
             this.btnAdministracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministracion.Location = new System.Drawing.Point(810, 382);
+            this.btnAdministracion.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAdministracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnAdministracion.Location = new System.Drawing.Point(731, 442);
             this.btnAdministracion.Name = "btnAdministracion";
-            this.btnAdministracion.Size = new System.Drawing.Size(240, 71);
+            this.btnAdministracion.Size = new System.Drawing.Size(211, 57);
             this.btnAdministracion.TabIndex = 8;
             this.btnAdministracion.Text = "ADMINISTRACION";
             this.btnAdministracion.UseVisualStyleBackColor = false;
@@ -142,13 +154,15 @@ namespace Bomberos
             // 
             // btnAreas
             // 
-            this.btnAreas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAreas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
             this.btnAreas.FlatAppearance.BorderSize = 0;
+            this.btnAreas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(79)))));
             this.btnAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAreas.Location = new System.Drawing.Point(164, 382);
+            this.btnAreas.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAreas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnAreas.Location = new System.Drawing.Point(272, 442);
             this.btnAreas.Name = "btnAreas";
-            this.btnAreas.Size = new System.Drawing.Size(240, 71);
+            this.btnAreas.Size = new System.Drawing.Size(195, 57);
             this.btnAreas.TabIndex = 6;
             this.btnAreas.Text = "AREAS";
             this.btnAreas.UseVisualStyleBackColor = false;
@@ -158,7 +172,7 @@ namespace Bomberos
             // 
             this.pnlFecha.Controls.Add(this.lblHora);
             this.pnlFecha.Controls.Add(this.lblDia);
-            this.pnlFecha.Location = new System.Drawing.Point(78, 75);
+            this.pnlFecha.Location = new System.Drawing.Point(370, 12);
             this.pnlFecha.Name = "pnlFecha";
             this.pnlFecha.Size = new System.Drawing.Size(538, 288);
             this.pnlFecha.TabIndex = 10;
@@ -167,15 +181,15 @@ namespace Bomberos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1264, 571);
-            this.Controls.Add(this.pnlFecha);
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.btnAreas);
             this.Controls.Add(this.btnSemana);
             this.Controls.Add(this.btnAdministracion);
             this.Controls.Add(this.btnReuniones);
+            this.Controls.Add(this.pnlFecha);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formPrincipal";

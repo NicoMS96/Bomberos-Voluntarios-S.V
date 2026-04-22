@@ -10,6 +10,7 @@ namespace Models
     {
         public int BomberosEmergenciaId { get; set; }
         public int CodigoBombero { get; set; }
-        public int EmergenciaId { get; set; }
+        public Emergencia Emergencia { get; set; } 
+        public Bombero Bombero { get; set; }
     }
 }

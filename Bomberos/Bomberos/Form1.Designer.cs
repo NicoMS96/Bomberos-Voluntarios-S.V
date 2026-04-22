@@ -30,31 +30,43 @@ namespace Bomberos
         private void InitializeComponent()
         {
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
             // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.pnlTitulo.Controls.Add(this.picLogo);
             this.pnlTitulo.Controls.Add(this.label1);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.ForeColor = System.Drawing.Color.White;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1264, 92);
             this.pnlTitulo.TabIndex = 0;
             // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::Bomberos.Properties.Resources.images_removebg_preview;
+            this.picLogo.Location = new System.Drawing.Point(20, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(95, 92);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 1;
+            this.picLogo.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(325, 28);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(314, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(572, 43);
+            this.label1.Size = new System.Drawing.Size(705, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "BOMBEROS VOLUNTARIOS SAN VICENTE";
             // 
@@ -66,16 +78,6 @@ namespace Bomberos
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1264, 589);
             this.pnlPrincipal.TabIndex = 1;
-            // 
-            // picLogo
-            // 
-            this.picLogo.Image = global::Bomberos.Properties.Resources.images_removebg_preview;
-            this.picLogo.Location = new System.Drawing.Point(20, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(95, 92);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 1;
-            this.picLogo.TabStop = false;
             // 
             // Form1
             // 

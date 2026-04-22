@@ -92,21 +92,21 @@ namespace Bomberos
 
         public void RellenarCampos()
         {
-            DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
-            
-            txtNombre.Text= bombero[1].ToString();
-            txtApellido.Text= bombero[2].ToString();
-            txtDni.Text= bombero[3].ToString();
-            txtContrasena.Text= bombero[4].ToString();
+            Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
-            chkPermiso.Checked = Convert.ToBoolean(bombero[5]);
-            if (Convert.ToInt32(bombero[5]) == 1)
+            txtNombre.Text = bombero.Nombre;
+            txtApellido.Text = bombero.Apellido;
+            txtDni.Text = bombero.Dni;
+            txtContrasena.Text = bombero.Contrasena;
+
+            chkPermiso.Checked = bombero.Permisos;
+            if (chkPermiso.Checked)
                 chkPermiso.Checked = true;
             else
                 chkPermiso.Checked = false;
 
-            cmbArea.SelectedValue =Convert.ToInt32(bombero[7]);
-            cmbCategoria.SelectedValue = Convert.ToInt32(bombero[8]);
+            cmbArea.SelectedValue =Convert.ToInt32(bombero.Area.AreaId);
+            cmbCategoria.SelectedValue = Convert.ToInt32(bombero.Categoria.CategoriaId);
 
         }
 
@@ -132,11 +132,17 @@ namespace Bomberos
                     Nombre = txtNombre.Text,
                     Apellido = txtApellido.Text,
                     Dni = txtDni.Text,
-                    Contrasena = txtContrasena.Text,
-                    CategoriaId = Convert.ToInt32(cmbCategoria.SelectedValue),
-                    AreaId = Convert.ToInt32(cmbArea.SelectedValue),
-                    Activo = 1,
-                    Permisos = chkPermiso.Checked ? 1 : 0,
+                    Contrasena = txtContrasena.Text, 
+                    Activo = true,
+                    Permisos = chkPermiso.Checked,
+                    Categoria = new Categoria()
+                    {
+                         CategoriaId = Convert.ToInt32(cmbCategoria.SelectedValue)
+                    },
+                    Area = new Area()
+                    {
+                        AreaId = Convert.ToInt32(cmbArea.SelectedValue)
+                    }
                 };
 
                 try

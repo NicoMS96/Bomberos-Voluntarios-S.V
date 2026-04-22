@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,24 +21,102 @@ namespace Datos
             string query = "SELECT * FROM Bomberos";
             return cn.ObtenerRegistros(query);
         }
-        public DataTable ObtenerBomberos(int activo)
-        {
-            string query = $@"SELECT b.codigoBombero AS 'COD. BOMB', b.nombre AS NOMBRE, b.apellido as APELLIDO, b.dni as DNI, 
-                            b.contrasena, c.categoria as CATEGORIA, b.permisos AS PERMISOS, b.activo, a.area as AREA
-                            FROM Bomberos b INNER JOIN Areas a on b.areaId=a.areaId INNER JOIN Categorias c on c.categoriaId=b.categoriaId
-                            WHERE activo = {activo}";
+        public List<Bombero> ObtenerBomberos(int activo)
+        { 
+            var lista = new List<Bombero>();
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"SELECT b.codigoBombero, b.nombre, b.apellido, b.dni, b.contrasena,
+                                     b.permisos, b.activo, b.areaId, b.categoriaId,
+                                     a.area, c.categoria
+                                     FROM Bomberos b
+                                     INNER JOIN Areas a ON b.areaId = a.areaId
+                                     INNER JOIN Categorias c ON c.categoriaId = b.categoriaId
+                                     WHERE b.activo = @activo";
 
-            return cn.ObtenerRegistros(query);
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@activo", activo);
+
+                    oConexion.Open();
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Bombero()
+                            {
+                                CodigoBombero = Convert.ToInt32(dr["codigoBombero"]),
+                                Nombre = dr["nombre"].ToString(),
+                                Apellido = dr["apellido"].ToString(),
+                                Dni = dr["dni"].ToString(),
+                                Contrasena = dr["contrasena"].ToString(),
+                                Permisos = Convert.ToBoolean(dr["permisos"]),
+                                Activo = Convert.ToBoolean(dr["activo"]),
+                                Area = new Area()
+                                {
+                                    AreaId = Convert.ToInt32(dr["areaId"])
+                                },
+                                Categoria = new Categoria()
+                                {
+                                    CategoriaId = Convert.ToInt32(dr["categoriaId"])
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+            catch { lista = new List<Bombero>(); }
+            return lista;
         }
 
-        public DataRow ObtenerBombero(int codigoBombero)
-        {
-            string query = $@"SELECT b.*, a.*, c.*
-                            FROM Bomberos b
-                            INNER JOIN Areas a ON b.AreaId = a.AreaId
-                            INNER JOIN Categorias c ON b.CategoriaId = c.CategoriaId
-                            WHERE b.CodigoBombero = {codigoBombero}";
-            return cn.ObtenerRegistro(query);
+        public Bombero ObtenerBombero(int codigoBombero)
+        {  
+            Bombero bombero = null;
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"SELECT b.*, a.area, c.categoria
+                                     FROM Bomberos b
+                                     INNER JOIN Areas a ON b.areaId = a.areaId
+                                     INNER JOIN Categorias c ON b.categoriaId = c.categoriaId
+                                     WHERE b.codigoBombero = @codigoBombero";
+
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@codigoBombero", codigoBombero);
+
+                    oConexion.Open();
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            bombero = new Bombero()
+                            {
+                                CodigoBombero = Convert.ToInt32(dr["codigoBombero"]),
+                                Nombre = dr["nombre"].ToString(),
+                                Apellido = dr["apellido"].ToString(),
+                                Dni = dr["dni"].ToString(),
+                                Contrasena = dr["contrasena"].ToString(),
+                                Permisos = Convert.ToBoolean(dr["permisos"]),
+                                Activo = Convert.ToBoolean(dr["activo"]),
+                                Area = new Area()
+                                {
+                                    AreaId = Convert.ToInt32(dr["areaId"])
+                                },
+                                Categoria = new Categoria()
+                                {
+                                    CategoriaId = Convert.ToInt32(dr["categoriaId"])
+                                } 
+                            };
+                        }
+                    }
+                }
+            }
+            catch { bombero = null; }
+            return bombero; 
         }
         
 
@@ -57,7 +136,7 @@ namespace Datos
 
         public int NuevoBombero(Bombero bombero)
         {
-            string query = $"INSERT INTO Bomberos VALUES('{bombero.Nombre}','{bombero.Apellido}','{bombero.Dni}','{bombero.Contrasena}',{(bombero.Permisos)},1,{bombero.AreaId},{bombero.CategoriaId})";
+            string query = $"INSERT INTO Bomberos VALUES('{bombero.Nombre}','{bombero.Apellido}','{bombero.Dni}','{bombero.Contrasena}',{(bombero.Permisos)},1,{bombero.Area.AreaId},{bombero.Categoria.CategoriaId})";
             return cn.EjecutarAccion(query);
         }
 
@@ -69,8 +148,8 @@ namespace Datos
                                 contrasena='{bombero.Contrasena}',
                                 permisos='{bombero.Permisos}',
                                 activo='{bombero.Activo}',
-                                areaId='{bombero.AreaId}',
-                                categoriaId='{bombero.CategoriaId}' WHERE codigoBombero={codigoBombero}";
+                                areaId='{bombero.Area.AreaId}',
+                                categoriaId='{bombero.Categoria.CategoriaId}' WHERE codigoBombero={codigoBombero}";
             return cn.EjecutarAccion(query);
 
         }

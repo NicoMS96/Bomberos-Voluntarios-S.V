@@ -29,9 +29,9 @@ namespace Bomberos
 
         private void formAgregarModificarTarea_Load(object sender, EventArgs e)
         {
-            DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
-            string area = bombero["area"].ToString();
-            areaId = Convert.ToInt32(bombero["areaId"]);
+            Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
+            string area = bombero.Area.AreaNombre;
+            areaId = bombero.Area.AreaId;
 
             lblTitulo.Text = "NUEVA TAREA EN " + area;
 
@@ -60,12 +60,18 @@ namespace Bomberos
             string detalles = txtTarea.Text;
              
             Tarea tarea = new Tarea()
-            {
-                TareasPredeterminadaId = tareaPrId,
+            { 
                 Observaciones = detalles,
                 Fecha = DateTime.Now,
-                CodigoBombero = codigoBombero,
-                sumaPunto = 1
+                sumaPunto = 1, 
+                TareaPredeterminada = new TareasPredeterminada()
+                {
+                    TareasPredeterminadaId = tareaPrId
+                },
+                Bombero = new Bombero()
+                {
+                    CodigoBombero = codigoBombero
+                }
             };
              
             string error = tareas.GuardarTarea(tarea);

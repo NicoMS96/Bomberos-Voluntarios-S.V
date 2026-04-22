@@ -21,12 +21,12 @@ namespace Logica
         {
             return bomberosDatos.ObtenerBomberos();
         }
-        public DataTable ObtenerBomberos(int activo)
+        public List<Bombero> ObtenerBomberos(int activo)
         {
             return bomberosDatos.ObtenerBomberos(activo);
         }
          
-        public DataRow ObtenerBombero(int codigoBombero)
+        public Bombero ObtenerBombero(int codigoBombero)
         {
             return bomberosDatos.ObtenerBombero(codigoBombero);
         }

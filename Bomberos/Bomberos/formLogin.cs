@@ -1,4 +1,5 @@
 ﻿using Logica;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,7 @@ namespace Bomberos
                 return false;
             }
 
-            DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
+            Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
             if (bombero == null && codigoBombero!=0)
             {
                 errorProvider1.SetError(txtCodigo, "No se encontró un bombero con el código ingresado.");
@@ -52,7 +53,7 @@ namespace Bomberos
 
             if (codigoBombero != 0)
             {
-                if (Convert.ToInt32(bombero["activo"]) == 0)
+                if (bombero.Activo)
                 {
                     errorProvider1.SetError(txtCodigo, "El codigo ingresado es de un bombero inactivo.");
                     return false;
@@ -75,20 +76,20 @@ namespace Bomberos
                 DataTable dtBomberos = bomberos.ObtenerBomberos();
                 if (dtBomberos.Rows.Count > 0)
                 {
-                    DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
+                    Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
                     if (codigoBombero != 0)
                     {
-                        if (bombero["contrasena"].ToString() == txtContrasena.Text && bombero["codigoBombero"].ToString() == txtCodigo.Text)
+                        if (bombero.Contrasena == txtContrasena.Text && bombero.CodigoBombero.ToString() == txtCodigo.Text)
                         {
-                            if (Convert.ToBoolean(bombero["permisos"]) == true || Convert.ToInt32(bombero["categoriaId"]) < 4)
+                            if (bombero.Permisos || bombero.Categoria.CategoriaId < 4)
                             {
                                 MessageBox.Show("Tiene los permisos necesarios");
                                 if (modulo == "ADMINISTRACION")
-                                    contenedor.AbrirFormulario(new formAdministracion(contenedor));
+                                    contenedor.AbrirFormulario(new formAdministracion(contenedor, codigoBombero));
 
                                 if (modulo == "AREAS")
-                                    contenedor.AbrirFormulario(new formAreas(contenedor));
+                                    contenedor.AbrirFormulario(new formAreas(contenedor, codigoBombero));
 
                                 this.Close();
 
@@ -105,7 +106,7 @@ namespace Bomberos
                     if (txtCodigo.Text == 0.ToString() && txtContrasena.Text == "admin")
                     {
                         if (modulo == "ADMINISTRACION")
-                            contenedor.AbrirFormulario(new formAdministracion(contenedor));
+                            contenedor.AbrirFormulario(new formAdministracion(contenedor, codigoBombero));
 
                         MessageBox.Show("Al crear un usuario, el usuario temporal no podrà volver a acceder","ADVERTENCIA");
                         this.Close();

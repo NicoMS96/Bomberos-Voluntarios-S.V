@@ -85,7 +85,7 @@ namespace Bomberos
             this.btnInicio.FlatAppearance.BorderSize = 0;
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.Location = new System.Drawing.Point(1084, 488);
+            this.btnInicio.Location = new System.Drawing.Point(12, 488);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(168, 71);
             this.btnInicio.TabIndex = 5;
@@ -120,7 +120,7 @@ namespace Bomberos
             this.btnNuevaReunion.FlatAppearance.BorderSize = 0;
             this.btnNuevaReunion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaReunion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaReunion.Location = new System.Drawing.Point(910, 488);
+            this.btnNuevaReunion.Location = new System.Drawing.Point(1084, 488);
             this.btnNuevaReunion.Name = "btnNuevaReunion";
             this.btnNuevaReunion.Size = new System.Drawing.Size(168, 71);
             this.btnNuevaReunion.TabIndex = 18;
@@ -135,7 +135,7 @@ namespace Bomberos
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(12, 488);
+            this.btnEliminar.Location = new System.Drawing.Point(910, 488);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(168, 71);
             this.btnEliminar.TabIndex = 19;

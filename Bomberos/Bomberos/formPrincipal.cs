@@ -145,5 +145,6 @@ namespace Bomberos
             formIngreso FormIngreso = new formIngreso("salida");
             FormIngreso.ShowDialog();
         }
+        
     }
 }

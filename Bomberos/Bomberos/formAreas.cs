@@ -15,8 +15,9 @@ namespace Bomberos
     {
         public Form1 contenedor { get; set; }
         public string area { get; set; }
+        public int codigoBombero { get; set; }
         TareasLogica tareas;
-
+        BomberosLogica bomberos;
         public void AbrirFormulario(Form formulario)
         {
             pnlAreas.Controls.Clear();
@@ -29,11 +30,13 @@ namespace Bomberos
         }
 
 
-        public formAreas(Form1 formPrincipal)
+        public formAreas(Form1 formPrincipal, int codigoBombero)
         {
+            this.codigoBombero = codigoBombero;
             contenedor = formPrincipal;
             InitializeComponent();
             tareas = new TareasLogica();
+            bomberos = new BomberosLogica();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -44,18 +47,17 @@ namespace Bomberos
 
         private void formAreas_Load(object sender, EventArgs e)
         {
-             
+            var bombero = bomberos.ObtenerBombero(codigoBombero);
+            int categoriaId = bombero.Categoria.CategoriaId;
+            int areaId = bombero.Area.AreaId;
+
+            MostrarGrilla(areaId);
         }
 
 
-        private void pnlAreas_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         public void MostrarGrilla(int areaId)
         {
             dgvTareas.Visible = true; 
-            btnAnularPunto.Visible = true;
             lblTitulo.Text = area;
 
             dgvTareas.DataSource = tareas.ObtenerTareas(areaId);
@@ -63,53 +65,148 @@ namespace Bomberos
             dgvTareas.Columns[0].Width = (int)(dgvTareas.Width * 0.12);
             dgvTareas.Columns[1].Width = (int)(dgvTareas.Width * 0.2);
         }
- 
-      
-        private void btnTaller_Click(object sender, EventArgs e)
-        {
-            area = "TALLER";
-            MostrarGrilla(2);
-        }
 
-        private void btnFurrieles_Click(object sender, EventArgs e)
-        {
-            area = "FURRIELES"; 
-            MostrarGrilla(4);
-        }
-
-        private void btnRoperia_Click(object sender, EventArgs e)
-        {
-            area = "ROPERIA"; 
-            MostrarGrilla(5);
-        }
-
-        private void btnAutomotores_Click(object sender, EventArgs e)
-        {
-            area = "AUTOMOTORES";
-            MostrarGrilla(6);
-        }
-
-        private void btnGuardias_Click(object sender, EventArgs e)
-        {
-            area = "GUARDIAS";
-            MostrarGrilla(7);
-        }
-
-        private void btnEdificio_Click(object sender, EventArgs e)
-        {
-            area = "EDIFICIO";
-            MostrarGrilla(1);
-        }
-
-        private void btnCapacitacion_Click(object sender, EventArgs e)
-        {
-            area = "CAPACITACION";
-            MostrarGrilla(3);
-        }
 
         private void btnAnularPunto_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnAgregarTarea_Click(object sender, EventArgs e)
+        {
+            formAgregarModificarTarea tarea = new formAgregarModificarTarea(codigoBombero);
+            tarea.ShowDialog();
+        }
+
+        #region CLICK BOTONES SideBar
+        private void btnTaller_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFurrieles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRoperia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAutomotores_Click(object sender, EventArgs e)
+        { 
+
+        }
+
+        private void btnGuardias_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void btnEdificio_Click(object sender, EventArgs e)
+        {
+             
+             
+        }
+
+        private void btnCapacitacion_Click(object sender, EventArgs e)
+        {
+            
+        } 
+
+
+        private void btnEdificio_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e);
+        }
+
+        // Variable para trackear cuál está activo
+        private Button btnActivo = null;
+        private void limpiarBotones(object sender)
+        {
+            btnActivo = sender as Button;
+
+            foreach (Button b in new[] { btnEdificio, btnTaller, btnCapacitacion,
+                                  btnFurrieles, btnRoperia, btnAutomotores,
+                                  btnGuardias })
+                b.Invalidate();
+
+        }
+        // ── Método reutilizable para el Paint ──
+        private void PintarSidebarBtn(Button btn, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            if (btn == btnActivo)
+            {
+                // Fondo activo
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(138, 16, 16)), 0, 0, btn.Width, btn.Height);
+                // Línea izquierda
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(255, 68, 68)), 0, 0, 3, btn.Height);
+                // Texto
+                e.Graphics.DrawString(btn.Text, btn.Font, new SolidBrush(Color.FromArgb(255, 224, 224)),
+                    new RectangleF(10, 0, btn.Width - 10, btn.Height),
+                    new StringFormat { LineAlignment = StringAlignment.Center });
+            }
+            else
+            {
+                // Fondo inactivo
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(37, 37, 40)), 0, 0, btn.Width, btn.Height);
+                // Texto
+                e.Graphics.DrawString(btn.Text, btn.Font, new SolidBrush(Color.FromArgb(168, 168, 168)),
+                    new RectangleF(8, 0, btn.Width - 8, btn.Height),
+                    new StringFormat { LineAlignment = StringAlignment.Center });
+            }
+        }
+         
+        private void btnTaller_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e);
+        }
+
+        private void btnCapacitacion_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e);
+        }
+
+        private void btnFurrieles_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e);
+        }
+
+        private void btnRoperia_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e);
+        }
+
+        private void btnAutomotores_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e); 
+        }
+
+        private void btnGuardias_Paint(object sender, PaintEventArgs e)
+        {
+            PintarSidebarBtn(sender as Button, e);
+        }
+
+        private void btnVolver_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = sender as Button;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            // Fondo
+            e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(37, 37, 40)), 0, 0, btn.Width, btn.Height);
+
+            // Flecha ← 
+            e.Graphics.DrawString("←", btn.Font, new SolidBrush(Color.FromArgb(168, 168, 168)),
+                new RectangleF(8, 0, 20, btn.Height),
+                new StringFormat { LineAlignment = StringAlignment.Center });
+
+            // Texto VOLVER
+            e.Graphics.DrawString("VOLVER", btn.Font, new SolidBrush(Color.FromArgb(168, 168, 168)),
+                new RectangleF(28, 0, btn.Width - 28, btn.Height),
+                new StringFormat { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Near });
+        }
+        #endregion 
     }
 }

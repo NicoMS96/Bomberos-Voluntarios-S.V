@@ -25,25 +25,25 @@ namespace Datos
         }
 
         public bool GuardarTarea(Tarea t)
-        { 
-                using (var oConexion = new SqlConnection(Conexion.cn))
-                {
+        {
+            using (var oConexion = new SqlConnection(Conexion.cn))
+            {
                 string query = @"INSERT INTO Tareas 
                  (tareasPredeterminadaId, codigoBombero, observaciones, fecha, sumaPunto)
                  VALUES
                  (@tareasPredeterminadaId, @codigoBombero, @observaciones, @fecha, @sumaPunto)";
                 var cmd = new SqlCommand(query, oConexion);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@tareasPredeterminadaId", t.TareasPredeterminadaId);
-                    cmd.Parameters.AddWithValue("@codigoBombero", t.CodigoBombero);
-                    cmd.Parameters.AddWithValue("@observaciones", t.Observaciones);
-                    cmd.Parameters.AddWithValue("@fecha", t.Fecha.Date); 
-                    cmd.Parameters.AddWithValue("@sumaPunto", t.sumaPunto);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@tareasPredeterminadaId", t.TareaPredeterminada.TareasPredeterminadaId);
+                cmd.Parameters.AddWithValue("@codigoBombero", t.Bombero.CodigoBombero);
+                cmd.Parameters.AddWithValue("@observaciones", t.Observaciones);
+                cmd.Parameters.AddWithValue("@fecha", t.Fecha.Date);
+                cmd.Parameters.AddWithValue("@sumaPunto", t.sumaPunto);
 
-                    oConexion.Open();
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-            
+                oConexion.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+
         }
 
 

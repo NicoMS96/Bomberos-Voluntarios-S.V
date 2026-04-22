@@ -30,11 +30,11 @@ namespace Logica
             try
             {
                 tareas.GuardarTarea(tarea);
-                return null; // null = éxito
+                return null; 
             }
             catch (Exception ex)
             {
-                return ex.Message; // devuelve el error como string
+                return ex.Message; 
             }
         }
          

@@ -9,11 +9,9 @@ namespace Models
      public class BomberoAsistencia
     {
         public int CodigoBombero { get; set; }
-        public int FechaId { get; set; }
         public string NombreCompleto { get; set; } // Combina Nombre y Apellido
         public DateTime Fecha { get; set; }
-        public float HorasTrabajadas { get; set; }
-        public string EstadoAsistencia { get; set; } // Presente, Ausente, etc.
+        public float HorasTrabajadas { get; set; } 
 
 
     }

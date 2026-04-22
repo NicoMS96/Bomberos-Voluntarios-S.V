@@ -53,19 +53,23 @@ namespace Bomberos
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.White;
             this.txtNombre.Location = new System.Drawing.Point(11, 77);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(341, 26);
-            this.txtNombre.TabIndex = 26;
+            this.txtNombre.Size = new System.Drawing.Size(341, 29);
+            this.txtNombre.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label3.Location = new System.Drawing.Point(8, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 20);
+            this.label3.Size = new System.Drawing.Size(75, 21);
             this.label3.TabIndex = 25;
             this.label3.Text = "NOMBRE";
             // 
@@ -82,64 +86,76 @@ namespace Bomberos
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(288, 9);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.lblTitulo.Location = new System.Drawing.Point(269, 5);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(231, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(227, 28);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "MODIFICAR BOMBERO";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label1.Location = new System.Drawing.Point(364, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(80, 21);
             this.label1.TabIndex = 25;
             this.label1.Text = "APELLIDO";
             // 
             // txtApellido
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.ForeColor = System.Drawing.Color.White;
             this.txtApellido.Location = new System.Drawing.Point(367, 77);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(341, 26);
-            this.txtApellido.TabIndex = 26;
+            this.txtApellido.Size = new System.Drawing.Size(341, 29);
+            this.txtApellido.TabIndex = 2;
             // 
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblContrasena.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.lblContrasena.Location = new System.Drawing.Point(364, 174);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(124, 20);
+            this.lblContrasena.Size = new System.Drawing.Size(111, 21);
             this.lblContrasena.TabIndex = 25;
             this.lblContrasena.Text = "CONTRASEÑA";
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtContrasena.Location = new System.Drawing.Point(367, 199);
+            this.txtContrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtContrasena.ForeColor = System.Drawing.Color.White;
+            this.txtContrasena.Location = new System.Drawing.Point(367, 198);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(340, 26);
-            this.txtContrasena.TabIndex = 26;
+            this.txtContrasena.Size = new System.Drawing.Size(340, 29);
+            this.txtContrasena.TabIndex = 6;
             this.txtContrasena.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label4.Location = new System.Drawing.Point(364, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.Size = new System.Drawing.Size(92, 21);
             this.label4.TabIndex = 25;
             this.label4.Text = "CATEGORIA";
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoria.ForeColor = System.Drawing.Color.White;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
             "Jefe",
@@ -148,24 +164,27 @@ namespace Bomberos
             "Cadete"});
             this.cmbCategoria.Location = new System.Drawing.Point(367, 136);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(340, 28);
-            this.cmbCategoria.TabIndex = 30;
+            this.cmbCategoria.Size = new System.Drawing.Size(340, 29);
+            this.cmbCategoria.TabIndex = 4;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label5.Location = new System.Drawing.Point(8, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 20);
+            this.label5.Size = new System.Drawing.Size(48, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "AREA";
             // 
             // cmbArea
             // 
+            this.cmbArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
             this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cmbArea.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbArea.ForeColor = System.Drawing.Color.White;
             this.cmbArea.FormattingEnabled = true;
             this.cmbArea.Items.AddRange(new object[] {
             "EDIFICIO",
@@ -177,37 +196,41 @@ namespace Bomberos
             "GUARDIA"});
             this.cmbArea.Location = new System.Drawing.Point(12, 197);
             this.cmbArea.Name = "cmbArea";
-            this.cmbArea.Size = new System.Drawing.Size(340, 28);
-            this.cmbArea.TabIndex = 30;
+            this.cmbArea.Size = new System.Drawing.Size(340, 29);
+            this.cmbArea.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label6.Location = new System.Drawing.Point(8, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 20);
+            this.label6.Size = new System.Drawing.Size(37, 21);
             this.label6.TabIndex = 25;
             this.label6.Text = "DNI";
             // 
             // txtDni
             // 
-            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDni.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDni.ForeColor = System.Drawing.Color.White;
             this.txtDni.Location = new System.Drawing.Point(11, 136);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(341, 26);
-            this.txtDni.TabIndex = 26;
+            this.txtDni.Size = new System.Drawing.Size(341, 29);
+            this.txtDni.TabIndex = 3;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(539, 248);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(168, 71);
-            this.btnGuardar.TabIndex = 31;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -215,11 +238,12 @@ namespace Bomberos
             // chkPermiso
             // 
             this.chkPermiso.AutoSize = true;
-            this.chkPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.chkPermiso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPermiso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.chkPermiso.Location = new System.Drawing.Point(12, 248);
             this.chkPermiso.Name = "chkPermiso";
-            this.chkPermiso.Size = new System.Drawing.Size(217, 24);
-            this.chkPermiso.TabIndex = 32;
+            this.chkPermiso.Size = new System.Drawing.Size(203, 25);
+            this.chkPermiso.TabIndex = 7;
             this.chkPermiso.Text = "Permisos administrativos";
             this.chkPermiso.UseVisualStyleBackColor = true;
             this.chkPermiso.Visible = false;
@@ -233,7 +257,7 @@ namespace Bomberos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(726, 332);
             this.Controls.Add(this.chkPermiso);
             this.Controls.Add(this.btnGuardar);

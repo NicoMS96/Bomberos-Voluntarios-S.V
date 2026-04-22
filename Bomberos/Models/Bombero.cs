@@ -13,11 +13,11 @@ namespace Models
         public string Apellido { get; set; }  // Apellido del bombero
         public string Dni { get; set; }       // DNI del bombero
         public string Contrasena { get; set; } // Contraseña para autenticación
-        public int Permisos { get; set; }    // Indicador de permisos especiales
-        public int Activo { get; set; }      // Indicador de estado activo/inactivo
+        public bool Permisos { get; set; }    // Indicador de permisos especiales
+        public bool Activo { get; set; }      // Indicador de estado activo/inactivo
 
         // Relaciones con otras tablas
-        public int AreaId { get; set; }       // Llave foránea con `Areas`
-        public int CategoriaId { get; set; } // Llave foránea con `Categorias`
+        public Area Area { get; set; }        
+        public Categoria Categoria { get; set; }  
     }
 }

@@ -46,13 +46,13 @@ namespace Bomberos
                 return false;
             }
 
-            DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
+            Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
             if (bombero == null)
             {
                 errorProvider1.SetError(txtCodigo, "No se encontró un bombero con el código ingresado.");
                 return false;
             }
-            if (Convert.ToInt32(bombero["activo"]) == 0)
+            if (bombero.Activo)
             {
                 errorProvider1.SetError(txtCodigo, "El codigo ingresado es de un bombero inactivo.");
                 return false;
@@ -65,11 +65,11 @@ namespace Bomberos
         {
             if (validaciones(out int codigoBombero))
             {
-                DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
+                Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
                 if (!dtBomberos.AsEnumerable().Any(row => Convert.ToInt32(row["codigoBombero"]) == codigoBombero))
                 { 
-                    dtBomberos.Rows.Add(codigoBombero, bombero["nombre"] + " " + bombero["apellido"]);
+                    dtBomberos.Rows.Add(codigoBombero, bombero.Nombre + " " + bombero.Apellido);
                 }
                 else
                 {
@@ -112,6 +112,11 @@ namespace Bomberos
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnGuardar2_Click(object sender, EventArgs e)
+        {
             if (ValidarReunion())
             {
                 try
@@ -127,7 +132,7 @@ namespace Bomberos
 
                     foreach (var item in lstAsisten.Items)
                     {
-                         
+
                         DataRowView rowView = item as DataRowView;
                         if (rowView != null)
                         {

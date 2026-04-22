@@ -9,7 +9,8 @@ namespace Models
     public class BomberoReunion
     {
         public int BomberosReunionId { get; set; }
-        public int CodigoBombero { get; set; }
-        public int ReunionId { get; set; }
+        public Bombero Bombero { get; set; }
+        public ReunionArea ReunionArea { get; set; }
+
     }
 }

@@ -36,6 +36,7 @@ namespace Bomberos
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnAsistencias = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnAgregarModifTarea = new System.Windows.Forms.Button();
             this.pnlSubtitulo.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -63,8 +64,9 @@ namespace Bomberos
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
             this.pnlMenu.Controls.Add(this.btnVolver);
+            this.pnlMenu.Controls.Add(this.btnAgregarModifTarea);
             this.pnlMenu.Controls.Add(this.btnPersonal);
             this.pnlMenu.Controls.Add(this.btnAsistencias);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -86,7 +88,8 @@ namespace Bomberos
             this.btnVolver.TabIndex = 10;
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.button1_Click);
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
+            this.btnVolver.Paint += new System.Windows.Forms.PaintEventHandler(this.btnVolver_Paint);
             // 
             // btnPersonal
             // 
@@ -94,13 +97,14 @@ namespace Bomberos
             this.btnPersonal.FlatAppearance.BorderSize = 0;
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonal.Location = new System.Drawing.Point(0, 113);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 77);
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Size = new System.Drawing.Size(253, 60);
             this.btnPersonal.TabIndex = 4;
             this.btnPersonal.Text = "PERSONAL";
             this.btnPersonal.UseVisualStyleBackColor = false;
             this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
+            this.btnPersonal.Paint += new System.Windows.Forms.PaintEventHandler(this.btnPersonal_Paint);
             // 
             // btnAsistencias
             // 
@@ -108,21 +112,39 @@ namespace Bomberos
             this.btnAsistencias.FlatAppearance.BorderSize = 0;
             this.btnAsistencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsistencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsistencias.Location = new System.Drawing.Point(0, 46);
+            this.btnAsistencias.Location = new System.Drawing.Point(0, 10);
             this.btnAsistencias.Name = "btnAsistencias";
             this.btnAsistencias.Size = new System.Drawing.Size(253, 60);
             this.btnAsistencias.TabIndex = 3;
             this.btnAsistencias.Text = "ASISTENCIAS";
             this.btnAsistencias.UseVisualStyleBackColor = false;
             this.btnAsistencias.Click += new System.EventHandler(this.btnAsistencias_Click);
+            this.btnAsistencias.Paint += new System.Windows.Forms.PaintEventHandler(this.btnAsistencias_Paint);
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlPrincipal.Location = new System.Drawing.Point(253, 39);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1011, 532);
             this.pnlPrincipal.TabIndex = 16;
+            // 
+            // btnAgregarModifTarea
+            // 
+            this.btnAgregarModifTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAgregarModifTarea.FlatAppearance.BorderSize = 0;
+            this.btnAgregarModifTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarModifTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarModifTarea.Location = new System.Drawing.Point(0, 143);
+            this.btnAgregarModifTarea.Name = "btnAgregarModifTarea";
+            this.btnAgregarModifTarea.Size = new System.Drawing.Size(253, 60);
+            this.btnAgregarModifTarea.TabIndex = 4;
+            this.btnAgregarModifTarea.Text = "GESTIONAR TAREAS";
+            this.btnAgregarModifTarea.UseVisualStyleBackColor = false;
+            this.btnAgregarModifTarea.Click += new System.EventHandler(this.btnAgregarModifTarea_Click);
+            this.btnAgregarModifTarea.Paint += new System.Windows.Forms.PaintEventHandler(this.btnPersonal_Paint);
             // 
             // formAdministracion
             // 
@@ -154,5 +176,6 @@ namespace Bomberos
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnAsistencias;
         private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.Button btnAgregarModifTarea;
     }
 }

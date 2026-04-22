@@ -13,7 +13,7 @@ using Models;
 namespace Bomberos
 {
     public partial class formIngreso : Form
-    {
+    { 
         AsistenciasLogica asistencias;
         BomberosLogica bomberos;
         string accion;
@@ -34,7 +34,6 @@ namespace Bomberos
         }
         public bool validaciones(out int codigoBombero)
         {
-             
             errorProvider1.Clear();
              
             if (string.IsNullOrWhiteSpace(txtCodigo.Text))
@@ -50,13 +49,13 @@ namespace Bomberos
                 return false;
             }
              
-            DataRow bombero = bomberos.ObtenerBombero(codigoBombero);
+            Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
             if (bombero == null)
             {
                 errorProvider1.SetError(txtCodigo, "No se encontró un bombero con el código ingresado.");
                 return false;
             }
-            if (Convert.ToInt32(bombero["activo"]) == 0)
+            if (!bombero.Activo)
             {
                 errorProvider1.SetError(txtCodigo, "El codigo ingresado es de un bombero inactivo.");
                 return false;
@@ -67,7 +66,6 @@ namespace Bomberos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 if (validaciones(out int codigoBombero))
@@ -76,7 +74,7 @@ namespace Bomberos
                     if (accion == "ingreso")
                         MarcarEntrada(codigoBombero);
                     else if (accion == "salida")
-                        MarcarSalida(codigoBombero);
+                        MarcarSalida(codigoBombero); 
                 }
             }
             catch (Exception ex)
@@ -96,13 +94,10 @@ namespace Bomberos
             {
                 errorProvider1.SetError(txtCodigo, mensajeError);
                 return;
-            }
-
-            // Salida registrada → mostrar formulario de tarea
-            formAgregarModificarTarea tarea = new formAgregarModificarTarea(codigoBombero);
-            tarea.ShowDialog();
+            } 
 
             MessageBox.Show("Salida registrada exitosamente.", "Confirmación");
+            this.Close();
         }
 
         public void MarcarEntrada(int codigoBombero)
@@ -110,9 +105,13 @@ namespace Bomberos
             string mensajeError = asistencias.RegistrarAsistencia(codigoBombero);
 
             if (!string.IsNullOrEmpty(mensajeError))
+            {
                 errorProvider1.SetError(txtCodigo, mensajeError);
-            else
-                MessageBox.Show("Ingreso registrado exitosamente.", "Confirmación");
+                return;
+            }
+            MessageBox.Show("Ingreso registrado exitosamente.", "Confirmación");
+            this.Close();
+
         }
     }
 }
