@@ -1,4 +1,5 @@
 ﻿using Logica;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,8 @@ namespace Bomberos
 {
     public partial class formAreas : Form
     {
-        public Form1 contenedor { get; set; }
-        public string area { get; set; }
-        public int codigoBombero { get; set; }
+        public formPrincipal contenedor { get; set; }
+        public Bombero bombero;
         TareasLogica tareas;
         BomberosLogica bomberos;
         public void AbrirFormulario(Form formulario)
@@ -30,38 +30,35 @@ namespace Bomberos
         }
 
 
-        public formAreas(Form1 formPrincipal, int codigoBombero)
+        public formAreas(formPrincipal formPrincipal, Bombero bombero)
         {
-            this.codigoBombero = codigoBombero;
             contenedor = formPrincipal;
             InitializeComponent();
+            this.bombero = bombero;
             tareas = new TareasLogica();
             bomberos = new BomberosLogica();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formPrincipal(contenedor));
+            this.Close();
+             
         }
 
 
         private void formAreas_Load(object sender, EventArgs e)
         {
-            var bombero = bomberos.ObtenerBombero(codigoBombero);
-            int categoriaId = bombero.Categoria.CategoriaId;
-            int areaId = bombero.Area.AreaId;
-
-            MostrarGrilla(areaId);
+            MostrarGrilla();
         }
 
 
-        public void MostrarGrilla(int areaId)
+        public void MostrarGrilla()
         {
             dgvTareas.Visible = true; 
-            lblTitulo.Text = area;
+           // lblTitulo.Text = bombero.Area.AreaNombre.ToString();
 
-            dgvTareas.DataSource = tareas.ObtenerTareas(areaId);
-
+            dgvTareas.DataSource = tareas.ObtenerTareasAreas(bombero.Area.AreaId);
+            btnAgregarTarea.Visible = true;
             dgvTareas.Columns[0].Width = (int)(dgvTareas.Width * 0.12);
             dgvTareas.Columns[1].Width = (int)(dgvTareas.Width * 0.2);
         }
@@ -74,44 +71,46 @@ namespace Bomberos
 
         private void btnAgregarTarea_Click(object sender, EventArgs e)
         {
-            formAgregarModificarTarea tarea = new formAgregarModificarTarea(codigoBombero);
+            formAgregarModificarTarea tarea = new formAgregarModificarTarea(bombero); 
             tarea.ShowDialog();
         }
 
         #region CLICK BOTONES SideBar
         private void btnTaller_Click(object sender, EventArgs e)
         {
-
+            limpiarBotones(sender);
         }
 
         private void btnFurrieles_Click(object sender, EventArgs e)
         {
-
+            limpiarBotones(sender);
         }
 
         private void btnRoperia_Click(object sender, EventArgs e)
         {
-
+            limpiarBotones(sender);
         }
 
         private void btnAutomotores_Click(object sender, EventArgs e)
-        { 
-
+        {
+            limpiarBotones(sender);
         }
 
         private void btnGuardias_Click(object sender, EventArgs e)
-        { 
+        {
+            limpiarBotones(sender);
         }
 
         private void btnEdificio_Click(object sender, EventArgs e)
         {
-             
-             
+            limpiarBotones(sender);
+
+
         }
 
         private void btnCapacitacion_Click(object sender, EventArgs e)
         {
-            
+            limpiarBotones(sender);
         } 
 
 

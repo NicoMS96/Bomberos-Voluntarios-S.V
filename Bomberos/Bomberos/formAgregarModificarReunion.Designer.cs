@@ -39,15 +39,16 @@ namespace Bomberos
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblAsisten = new System.Windows.Forms.Label();
-            this.lstAsisten = new System.Windows.Forms.ListBox();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnGuardar2 = new System.Windows.Forms.Button();
+            this.dgvBomberos = new System.Windows.Forms.DataGridView();
             this.pnlSubtitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBomberos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTema
@@ -156,20 +157,6 @@ namespace Bomberos
             this.lblAsisten.TabIndex = 30;
             this.lblAsisten.Text = "BOMBEROS QUE ASISTEN: ";
             // 
-            // lstAsisten
-            // 
-            this.lstAsisten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
-            this.lstAsisten.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstAsisten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lstAsisten.ForeColor = System.Drawing.Color.White;
-            this.lstAsisten.FormattingEnabled = true;
-            this.lstAsisten.ItemHeight = 20;
-            this.lstAsisten.Location = new System.Drawing.Point(10, 307);
-            this.lstAsisten.Name = "lstAsisten";
-            this.lstAsisten.Size = new System.Drawing.Size(341, 120);
-            this.lstAsisten.TabIndex = 31;
-            this.lstAsisten.SelectedIndexChanged += new System.EventHandler(this.lstAsisten_SelectedIndexChanged);
-            // 
             // dtpHora
             // 
             this.dtpHora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,18 +217,29 @@ namespace Bomberos
             this.btnGuardar2.UseVisualStyleBackColor = false;
             this.btnGuardar2.Click += new System.EventHandler(this.btnGuardar2_Click);
             // 
+            // dgvBomberos
+            // 
+            this.dgvBomberos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.dgvBomberos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBomberos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBomberos.Location = new System.Drawing.Point(10, 308);
+            this.dgvBomberos.Name = "dgvBomberos";
+            this.dgvBomberos.Size = new System.Drawing.Size(342, 124);
+            this.dgvBomberos.TabIndex = 38;
+            this.dgvBomberos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBomberos_CellClick);
+            // 
             // formAgregarModificarReunion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(363, 508);
+            this.Controls.Add(this.dgvBomberos);
             this.Controls.Add(this.btnGuardar2);
             this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lstAsisten);
             this.Controls.Add(this.lblAsisten);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pnlSubtitulo);
@@ -256,6 +254,7 @@ namespace Bomberos
             this.pnlSubtitulo.ResumeLayout(false);
             this.pnlSubtitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBomberos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,12 +271,12 @@ namespace Bomberos
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblAsisten;
-        private System.Windows.Forms.ListBox lstAsisten;
         private System.Windows.Forms.DateTimePicker dtpHora;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnGuardar2;
+        private System.Windows.Forms.DataGridView dgvBomberos;
     }
 }

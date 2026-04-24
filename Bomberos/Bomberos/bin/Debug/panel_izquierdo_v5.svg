@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="311" height="571" viewBox="0 0 311 571">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C82020"/>
+      <stop offset="100%" stop-color="#8A1010"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sin fondo — transparente -->
+
+  <!-- Franja roja superior -->
+  <rect x="0" y="0" width="311" height="5" fill="#B01E1E"/>
+  <rect x="0" y="5" width="311" height="1.5" fill="#8A1010" opacity="0.8"/>
+
+  <!-- Borde derecho -->
+  <rect x="310" y="0" width="1" height="571" fill="#111111"/>
+
+  <!-- Sombra simulada del escudo -->
+  <ellipse cx="155" cy="348" rx="72" ry="18" fill="#8A1010" opacity="0.35"/>
+
+  <!-- ── ESCUDO ── -->
+  <g transform="translate(155, 230)">
+    <!-- Sombra offset manual -->
+    <path d="M3,-92 L79,-62 L79,23 C79,71 46,100 3,115 C-40,100 -73,71 -73,23 L-73,-62 Z"
+          fill="#5A0A0A" opacity="0.5"/>
+
+    <!-- Cuerpo del escudo -->
+    <path d="M0,-95 L76,-65 L76,20 C76,68 43,97 0,112 C-43,97 -76,68 -76,20 L-76,-65 Z"
+          fill="url(#shieldGrad)"/>
+
+    <!-- Borde escudo -->
+    <path d="M0,-95 L76,-65 L76,20 C76,68 43,97 0,112 C-43,97 -76,68 -76,20 L-76,-65 Z"
+          fill="none" stroke="#CC2222" stroke-width="2.5" opacity="0.7"/>
+
+    <!-- Inner highlight -->
+    <path d="M0,-80 L61,-54 L61,18 C61,58 35,83 0,96 C-35,83 -61,58 -61,18 L-61,-54 Z"
+          fill="#B01E1E" opacity="0.3"/>
+
+    <!-- Brillo superior -->
+    <path d="M-30,-85 L10,-70 L10,-20 C10,0 0,10 -20,18 C-50,5 -65,-15 -65,-35 L-65,-55 Z"
+          fill="white" opacity="0.06"/>
+
+    <!-- Cruz -->
+    <rect x="-8" y="-48" width="16" height="52" rx="2" fill="white" opacity="0.92"/>
+    <rect x="-28" y="-32" width="56" height="16" rx="2" fill="white" opacity="0.92"/>
+
+    <!-- Símbolo inferior -->
+    <circle cx="0" cy="40" r="14" fill="none" stroke="white" stroke-width="2.5" opacity="0.75"/>
+    <line x1="0" y1="26" x2="0" y2="56" stroke="white" stroke-width="2.5" opacity="0.75"/>
+    <line x1="-14" y1="52" x2="14" y2="52" stroke="white" stroke-width="2.5" opacity="0.75"/>
+  </g>
+
+  <!-- ── TEXTOS ── -->
+  <text x="155" y="415"
+        font-family="Arial, sans-serif"
+        font-weight="700"
+        font-size="26"
+        fill="#F5F5F5"
+        text-anchor="middle"
+        letter-spacing="5">BOMBEROS</text>
+
+  <text x="155" y="441"
+        font-family="Arial, sans-serif"
+        font-weight="400"
+        font-size="12"
+        fill="#AAAAAA"
+        text-anchor="middle"
+        letter-spacing="4">VOLUNTARIOS S.V.</text>
+
+  <!-- Línea decorativa -->
+  <line x1="95" y1="455" x2="215" y2="455" stroke="#B01E1E" stroke-width="1.5"/>
+
+  <text x="155" y="475"
+        font-family="Arial, sans-serif"
+        font-weight="300"
+        font-size="10"
+        fill="#555555"
+        text-anchor="middle"
+        letter-spacing="4">SISTEMA DE GESTION</text>
+
+</svg>

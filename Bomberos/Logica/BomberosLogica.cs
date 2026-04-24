@@ -11,17 +11,14 @@ namespace Logica
 {
     public class BomberosLogica
     {
-        BomberosDatos bomberosDatos;
+        BomberosDatos bomberosDatos; 
         public BomberosLogica()
         {
-            bomberosDatos = new BomberosDatos();
+            bomberosDatos = new BomberosDatos(); 
         }
 
-        public DataTable ObtenerBomberos()
-        {
-            return bomberosDatos.ObtenerBomberos();
-        }
-        public List<Bombero> ObtenerBomberos(int activo)
+        
+        public List<Bombero> ObtenerBomberos(bool activo)
         {
             return bomberosDatos.ObtenerBomberos(activo);
         }
@@ -29,30 +26,19 @@ namespace Logica
         public Bombero ObtenerBombero(int codigoBombero)
         {
             return bomberosDatos.ObtenerBombero(codigoBombero);
-        }
+        } 
 
-        public DataTable ObtenerAreas()
-        {
-            return bomberosDatos.ObtenerAreas();
-        }
-        public DataTable ObtenerCategorias()
-        {
-            return bomberosDatos.ObtenerCategorias();
-        }
-
-        public int NuevoBombero(Bombero bombero)
-        {
-            
+        public bool NuevoBombero(Bombero bombero)
+        { 
             return bomberosDatos.NuevoBombero(bombero);
         }
 
-        public int ModificarBombero(Bombero bombero, int codigoBombero)
-        {
-
-            return bomberosDatos.ModificarBombero(bombero, codigoBombero);
+        public bool ModificarBombero(Bombero bombero)
+        { 
+            return bomberosDatos.ModificarBombero(bombero);
         }
 
-        public int AlternarActividad(int activo, int id)
+        public bool AlternarActividad(int activo, int id)
         {
             return bomberosDatos.AlternarActividad(activo, id);
         }

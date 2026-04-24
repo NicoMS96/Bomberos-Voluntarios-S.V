@@ -13,9 +13,9 @@ namespace Bomberos
 {
     public partial class formEmergencia : Form
     {
-        public Form1 contenedor { get; set; }
+        public formPrincipal contenedor { get; set; }
         EmergenciasLogica emergencias;
-        public formEmergencia(Form1 Principal)
+        public formEmergencia(formPrincipal Principal)
         {
             contenedor = Principal;
             InitializeComponent();
@@ -24,13 +24,15 @@ namespace Bomberos
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formPrincipal(contenedor));
+            this.Close();
+
         }
 
         private void btnNuevaEmergencia_Click(object sender, EventArgs e)
         {
             formAgregarModificarEmergencia FormAgregarEmergencia = new formAgregarModificarEmergencia("nueva");
             FormAgregarEmergencia.ShowDialog();
+            ActualizarGrilla();
         }
         public void ActualizarGrilla()
         {

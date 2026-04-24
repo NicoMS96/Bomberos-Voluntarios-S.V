@@ -36,6 +36,7 @@ namespace Bomberos
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbTareasPredeterminadas = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlSubtitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@ namespace Bomberos
             this.txtTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
             this.txtTarea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTarea.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTarea.ForeColor = System.Drawing.Color.White;
             this.txtTarea.Location = new System.Drawing.Point(12, 140);
             this.txtTarea.Multiline = true;
             this.txtTarea.Name = "txtTarea";
@@ -102,6 +104,7 @@ namespace Bomberos
             this.cmbTareasPredeterminadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
             this.cmbTareasPredeterminadas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTareasPredeterminadas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTareasPredeterminadas.ForeColor = System.Drawing.Color.White;
             this.cmbTareasPredeterminadas.FormattingEnabled = true;
             this.cmbTareasPredeterminadas.Location = new System.Drawing.Point(12, 75);
             this.cmbTareasPredeterminadas.Name = "cmbTareasPredeterminadas";
@@ -120,12 +123,24 @@ namespace Bomberos
             this.label4.TabIndex = 31;
             this.label4.Text = "TAREAS PREDETERMINADAS";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+            this.label1.Location = new System.Drawing.Point(58, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "(Solo si en tarea predeterminada seleccion \"Otro\")";
+            // 
             // formAgregarModificarTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(436, 427);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTareasPredeterminadas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTarea);
@@ -153,5 +168,6 @@ namespace Bomberos
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.ComboBox cmbTareasPredeterminadas;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
     }
 }

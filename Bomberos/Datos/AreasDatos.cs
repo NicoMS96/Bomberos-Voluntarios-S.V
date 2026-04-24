@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,24 +11,66 @@ namespace Datos
 {
     public class AreasDatos
     {
-        Conexion cn;
-
-        public AreasDatos()
+        public List<Area> ObtenerAreas()
         {
-            cn = new Conexion();
+            var lista = new List<Area>();
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"SELECT * FROM Areas";
+
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
+
+                    oConexion.Open();
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Area()
+                            {
+                                AreaId = Convert.ToInt32(dr["areaId"]),
+                                AreaNombre = dr["area"].ToString(),
+                                 
+                            });
+                        }
+                    }
+                }
+            }
+            catch { lista = new List<Area>(); }
+            return lista;
         }
 
-        public DataTable ObtenerAreas()
+        public List<Categoria> ObtenerCategorias()
         {
-            string query = "SELECT * FROM Areas";
-            return cn.ObtenerRegistros(query);
-        }
+            var lista = new List<Categoria>();
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = @"SELECT * FROM Categorias";
 
-        public DataRow ObtenerAreas(int areaId)
-        {
-            string query = "SELECT * FROM Areas WHERE AreaID="+areaId;
-            return cn.ObtenerRegistro(query);
-        }
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
 
+                    oConexion.Open();
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Categoria()
+                            {
+                                CategoriaId = Convert.ToInt32(dr["categoriaId"]),
+                                CategoriaNombre = dr["categoria"].ToString(),
+
+                            });
+                        }
+                    }
+                }
+            }
+            catch { lista = new List<Categoria>(); }
+            return lista;
+        }
     }
 }

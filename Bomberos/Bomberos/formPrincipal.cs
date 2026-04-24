@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,42 +12,64 @@ using System.Windows.Forms;
 namespace Bomberos
 {
     public partial class formPrincipal : Form
-    {
-        public Form1 contenedor { get; set; } 
-        public formPrincipal(Form1 formPrincipal)
-        {
-            contenedor = formPrincipal;
+    { 
+        public formPrincipal( )
+        { 
             InitializeComponent();
 
         }
+        
+        public void AbrirFormulario(Form formulario)
+        {
+            var anteriores = this.Controls.OfType<Form>().ToList();
+            foreach (var f in anteriores)
+            {
+                this.Controls.Remove(f);
+                f.Close();
+            }
+
+            PanelIzquierdo.Visible = false;
+
+            formulario.FormClosed += (s, e) => {
+                PanelIzquierdo.Visible = true;
+            };
+
+            formulario.TopLevel = false;
+            formulario.Dock = DockStyle.Fill;
+            this.Controls.Add(formulario);
+            formulario.BringToFront();
+            formulario.Show();
+        }
+
         private void formPrincipal_Load(object sender, EventArgs e)
-        {  
+        { 
+
             FechaHora();
         }
         
         private void btnAreas_Click(object sender, EventArgs e)
         {
-            formLogin login = new formLogin("AREAS", contenedor);
+            formLogin login = new formLogin("AREAS", this);
             login.ShowDialog();
         }
 
         private void btnReuniones_Click(object sender, EventArgs e)
         {
-             
-            contenedor.AbrirFormulario(new formReuniones(contenedor));
+
+            AbrirFormulario(new formReuniones(this));
 
         }
 
 
         private void btnAdministracion_Click(object sender, EventArgs e)
         {
-            formLogin login = new formLogin("ADMINISTRACION",contenedor);
+            formLogin login = new formLogin("ADMINISTRACION", this);
             login.ShowDialog(); 
         }
 
         private void btnSemana_Click(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formEmergencia(contenedor));
+            AbrirFormulario(new formEmergencia(this));
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)

@@ -10,6 +10,8 @@ namespace Models
     {
         public int TareasPredeterminadaId { get; set; }  // Llave primaria
         public string TareaPredeterminada { get; set; }  // Descripción de la tarea
+        public override string ToString() => TareaPredeterminada;
+
     }
 
 }

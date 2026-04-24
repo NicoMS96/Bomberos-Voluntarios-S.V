@@ -17,8 +17,8 @@ namespace Bomberos
         public string accion { get; set; }
         BomberosLogica bomberos;
         ReunionesLogica reuniones;
-        Form1 contenedor { get; set; }
-        public formAgregarModificarReunion(string accion, Form1 principal)
+        formPrincipal contenedor { get; set; }
+        public formAgregarModificarReunion(string accion, formPrincipal principal)
         {
             contenedor = principal;
             this.accion = accion;
@@ -52,7 +52,7 @@ namespace Bomberos
                 errorProvider1.SetError(txtCodigo, "No se encontró un bombero con el código ingresado.");
                 return false;
             }
-            if (bombero.Activo)
+            if (!bombero.Activo)
             {
                 errorProvider1.SetError(txtCodigo, "El codigo ingresado es de un bombero inactivo.");
                 return false;
@@ -60,16 +60,26 @@ namespace Bomberos
 
             return true;
         }
+        List<Bombero> bomberosAsignados = new List<Bombero>();
+        public void AgregarBomberoLista(int codigo, string nombre)
+        {
+            dgvBomberos.Rows.Add(
+                codigo.ToString().PadLeft(2, '0'),
+                nombre,
+                "QUITAR"
+            );
 
+        }
         private void btnAsignarBombero_Click(object sender, EventArgs e)
         {
             if (validaciones(out int codigoBombero))
             {
                 Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
-                if (!dtBomberos.AsEnumerable().Any(row => Convert.ToInt32(row["codigoBombero"]) == codigoBombero))
-                { 
-                    dtBomberos.Rows.Add(codigoBombero, bombero.Nombre + " " + bombero.Apellido);
+                if (!bomberosAsignados.Any(b => b.CodigoBombero == codigoBombero))
+                {
+                    bomberosAsignados.Add(bombero);
+                    AgregarBomberoLista(codigoBombero, bombero.Nombre + " " + bombero.Apellido);
                 }
                 else
                 {
@@ -78,17 +88,10 @@ namespace Bomberos
                 }
             }
 
-        }
-        DataTable dtBomberos;
+        } 
         private void formAgregarModificarReunion_Load(object sender, EventArgs e)
         {
-            dtBomberos = new DataTable();
-            dtBomberos.Columns.Add("codigoBombero", typeof(int));
-            dtBomberos.Columns.Add("nombreApellido", typeof(string));
-
-            lstAsisten.DisplayMember = "nombreApellido";
-            lstAsisten.ValueMember = "codigoBombero";
-            lstAsisten.DataSource = dtBomberos;
+            ConfigurarListaBomberos();
         }
 
         private void lstAsisten_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,7 +100,7 @@ namespace Bomberos
         }
         public bool ValidarReunion()
         {
-            if (lstAsisten.Items.Count == 0)
+            if (dgvBomberos.Rows.Count == 0)
             {
                 MessageBox.Show("No se puede guardar una reunión sin bomberos");
                 return false;
@@ -130,19 +133,9 @@ namespace Bomberos
 
                     int codigoReunion = reuniones.AgregarReunion(reunion);
 
-                    foreach (var item in lstAsisten.Items)
-                    {
-
-                        DataRowView rowView = item as DataRowView;
-                        if (rowView != null)
-                        {
-                            int codigoBombero = Convert.ToInt32(rowView["codigoBombero"]);
-                            reuniones.BomberosReunion(codigoReunion, codigoBombero);
-
-                        }
-                    }
-                    formReuniones FormReuniones = new formReuniones(contenedor);
-                    contenedor.AbrirFormulario(FormReuniones);
+                    foreach(var b in bomberosAsignados)
+                        reuniones.BomberosReunion(codigoReunion, b.CodigoBombero);
+                     
                     MessageBox.Show("Reunion registrada correctamente.");
                     this.Close();
                 }
@@ -151,6 +144,80 @@ namespace Bomberos
                     MessageBox.Show("Error" + ex.Message);
                 }
 
+            }
+            
+        }
+
+        #region CONFIG DGVBOMBEROS
+        private void ConfigurarListaBomberos()
+        {
+            dgvBomberos.ColumnHeadersVisible = false; // sin headers
+            dgvBomberos.RowHeadersVisible = false; // sin columna izquierda
+            dgvBomberos.AllowUserToAddRows = false;
+            dgvBomberos.AllowUserToDeleteRows = false;
+            dgvBomberos.AllowUserToResizeRows = false;
+            dgvBomberos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBomberos.MultiSelect = false;
+            dgvBomberos.ScrollBars = ScrollBars.Vertical;
+            dgvBomberos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvBomberos.EnableHeadersVisualStyles = false;
+
+            // Colores
+            dgvBomberos.BackgroundColor = Color.FromArgb(43, 43, 46);
+            dgvBomberos.GridColor = Color.FromArgb(68, 68, 72);
+            dgvBomberos.DefaultCellStyle.BackColor = Color.FromArgb(58, 58, 63);
+            dgvBomberos.DefaultCellStyle.ForeColor = Color.FromArgb(232, 232, 232);
+            dgvBomberos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(107, 18, 18);
+            dgvBomberos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(255, 224, 224);
+            dgvBomberos.DefaultCellStyle.Font = new Font("Segoe UI", 9f);
+            dgvBomberos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(50, 50, 55);
+
+            // Columnas
+            dgvBomberos.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "codigo",
+                Width = 40,
+                DefaultCellStyle = new DataGridViewCellStyle()
+                {
+                    BackColor = Color.FromArgb(43, 43, 46),
+                    ForeColor = Color.FromArgb(168, 168, 168),
+                    Alignment = DataGridViewContentAlignment.MiddleCenter,
+                    Font = new Font("Segoe UI", 8f)
+                }
+            });
+
+            dgvBomberos.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "nombre",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+
+            // Columna botón QUITAR
+            dgvBomberos.Columns.Add(new DataGridViewButtonColumn()
+            {
+                Name = "quitar",
+                Text = "QUITAR",
+                UseColumnTextForButtonValue = true,
+                Width = 70,
+                DefaultCellStyle = new DataGridViewCellStyle()
+                {
+                    BackColor = Color.FromArgb(43, 43, 46),
+                    ForeColor = Color.FromArgb(255, 112, 112),
+                    Font = new Font("Segoe UI", 7.5f, FontStyle.Bold),
+                    Alignment = DataGridViewContentAlignment.MiddleCenter
+                },
+                FlatStyle = FlatStyle.Flat
+            });
+        }
+        #endregion
+
+        private void dgvBomberos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvBomberos.Columns["quitar"].Index)
+            {
+                int codigo = Convert.ToInt32(dgvBomberos.Rows[e.RowIndex].Cells["codigo"].Value);
+                bomberosAsignados.RemoveAll(b => b.CodigoBombero == codigo);
+                dgvBomberos.Rows.RemoveAt(e.RowIndex);
             }
         }
     }

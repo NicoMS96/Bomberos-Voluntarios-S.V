@@ -13,22 +13,18 @@ using Models;
 namespace Bomberos
 {
     public partial class formAgregarModificarPersonal : Form
-    {
-        string accion;
+    { 
         BomberosLogica bomberos;
-        Form1 contenedor { get; set; }
-        formPersonal formPersonalOrigen { get; set; }
+        AreasLogica areas;
 
-        int codigoBombero;
-        public formAgregarModificarPersonal(string accion, int codigoBombero, Form1 principal, formPersonal origen)
+        public int codigoBombero { get; set; }
+        public formAgregarModificarPersonal(int codigoBombero)
         {
-            contenedor = principal;
-            this.codigoBombero = codigoBombero;
-            this.accion = accion;
-            this.formPersonalOrigen = origen;
+            this.codigoBombero = codigoBombero; 
             InitializeComponent();
-            lblTitulo.Text = accion=="agregar" ? "NUEVO BOMBERO" : "MODIFICAR BOMBERO";
-            bomberos = new BomberosLogica(); 
+            lblTitulo.Text = codigoBombero == 0 ? "NUEVO BOMBERO" : "MODIFICAR BOMBERO";
+            bomberos = new BomberosLogica();
+            areas = new AreasLogica();
         }
          
 
@@ -36,8 +32,8 @@ namespace Bomberos
         {
             RellenarCmbs();
 
-            if(accion=="modificar")
-                RellenarCampos();
+            if(codigoBombero>0)
+                RellenarCampos(codigoBombero);
         }
 
         public bool Validacion()
@@ -90,7 +86,7 @@ namespace Bomberos
             return validado;
         }
 
-        public void RellenarCampos()
+        public void RellenarCampos(int codigoBombero)
         {
             Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
@@ -113,13 +109,13 @@ namespace Bomberos
 
         public void RellenarCmbs()
         {
-            cmbCategoria.DisplayMember = "categoria";
-            cmbCategoria.ValueMember = "categoriaId";
-            cmbCategoria.DataSource = bomberos.ObtenerCategorias();
+            cmbCategoria.DisplayMember = "CategoriaNombre";
+            cmbCategoria.ValueMember = "CategoriaId";
+            cmbCategoria.DataSource = areas.ObtenerCategorias();
 
-            cmbArea.DisplayMember = "area";
-            cmbArea.ValueMember = "areaId";
-            cmbArea.DataSource = bomberos.ObtenerAreas();
+            cmbArea.DisplayMember = "AreaNombre";
+            cmbArea.ValueMember = "AreaId";
+            cmbArea.DataSource = areas.ObtenerAreas();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -147,26 +143,30 @@ namespace Bomberos
 
                 try
                 {
-                    if (accion == "agregar")
+                    // Codigo 0 = No esta registrado
+                    if (codigoBombero==0)
                     {
                         DialogResult resultado = MessageBox.Show("Está a punto de registra un nuevo bombero. ¿Confirma los datos?", "Confirmación de nuevo bombero", MessageBoxButtons.YesNo);
 
                         if (resultado == DialogResult.Yes)
                         {
-                            int confirma = bomberos.NuevoBombero(Bombero);
+                            bool confirma = bomberos.NuevoBombero(Bombero);
                             MessageBox.Show("Bombero registrado exitosamente.", "Notificación");
                             this.Close();
                         }
-                    }
-
-                    if (accion == "modificar")
+                    } // Codigo > 0 = Esta registrado y desea modificar
+                    else 
                     {
                         DialogResult resultado = MessageBox.Show($"Está a punto de modificar al bombero con DNI {Bombero.Dni}. ¿Confirma los datos?", "Confirmación de modificación", MessageBoxButtons.YesNo);
-
+                         
                         if (resultado == DialogResult.Yes)
                         {
-                            int confirma = bomberos.ModificarBombero(Bombero, codigoBombero);
-                            MessageBox.Show("Bombero modificado exitosamente.", "Notificación");
+                            Bombero.CodigoBombero = codigoBombero;
+                            bool confirma = bomberos.ModificarBombero(Bombero); 
+                            if(confirma)
+                                MessageBox.Show("Bombero modificado exitosamente.", "Notificación");
+                            else
+                                MessageBox.Show("Ocurrio un error");
                             this.Close(); 
                         }
                     }
@@ -199,7 +199,7 @@ namespace Bomberos
                 txtContrasena.Enabled = true;
             }
 
-            if (accion == "agregar")
+            if (codigoBombero==0)
             {
                 if (Convert.ToInt32(cmbCategoria.SelectedValue) == 4)
                 {

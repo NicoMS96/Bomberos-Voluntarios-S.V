@@ -25,17 +25,17 @@ namespace Bomberos
             bomberos = new BomberosLogica();
             emergencias = new EmergenciasLogica();
         }
-        DataTable dtBomberos;
+        List<Bombero> bomberosAsignados = new List<Bombero>();
         private void btnAsignarBombero_Click(object sender, EventArgs e)
         {
             if (validaciones(out int codigoBombero))
             {
                  Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
-                if (!dtBomberos.AsEnumerable().Any(row => Convert.ToInt32(row["codigoBombero"]) == codigoBombero))
+                if (!bomberosAsignados.Any(b => b.CodigoBombero == codigoBombero))
                 {
-                    dtBomberos.Rows.Add(codigoBombero, bombero.Nombre + " " + bombero.Apellido);
-                    AgregarBomberoLista(codigoBombero, bombero.Nombre );
+                    bomberosAsignados.Add(bombero);
+                    AgregarBomberoLista(codigoBombero, bombero.Nombre + " " + bombero.Apellido);
                 }
                 else
                 {
@@ -67,7 +67,7 @@ namespace Bomberos
                 errorProvider1.SetError(txtCodigo, "No se encontró un bombero con el código ingresado.");
                 return false;
             }
-            if (bombero.Activo)
+            if (!bombero.Activo)
             {
                 errorProvider1.SetError(txtCodigo, "El codigo ingresado es de un bombero inactivo.");
                 return false;
@@ -77,40 +77,33 @@ namespace Bomberos
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (ValidarReunion())
+        { 
+            try
             {
-                try
+                if (ValidarEmergencia())
                 {
                     Emergencia emergencia = new Emergencia()
                     {
                         FechaEntrada = dtpInicio.Value,
-                        FechaSalida= dtpFinalizacion.Value,
-                        Observacion=txtDetalles.Text
+                        FechaSalida = dtpFinalizacion.Value,
+                        Observacion = txtDetalles.Text
                     };
-
                     int codigoEmergencia = emergencias.AgregarEmergencia(emergencia);
 
-                    foreach (DataGridViewRow row in dgvBomberos.Rows)
-                    { 
-                        if (row != null)
-                        {
-                            int codigoBombero = Convert.ToInt32(row.Cells[0].Value);
-                            emergencias.BomberosEmergencias(codigoEmergencia, codigoBombero);
-                        }
-                    }
+                    foreach (Bombero b in bomberosAsignados)
+                        emergencias.BomberosEmergencias(codigoEmergencia, b.CodigoBombero);
+
                     MessageBox.Show("Emergencia registrada correctamente.");
                     this.Close();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error" + ex.Message);
-                }
 
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            } 
         }
-        public bool ValidarReunion()
+        public bool ValidarEmergencia()
         {
             if (dgvBomberos.Rows.Count == 0)
             {
@@ -129,14 +122,8 @@ namespace Bomberos
         private void formAgregarModificarEmergencia_Load(object sender, EventArgs e)
         {  
             lblTitulo.Text = accion == "nueva" ? "NUEVA EMERGENCIA" : "MODIFICAR EMERGENCIA";
-            AcomodarTitulo();
-            dtBomberos = new DataTable();
-            dtBomberos.Columns.Add("codigoBombero", typeof(int));
-            dtBomberos.Columns.Add("nombreApellido", typeof(string));
-
-            /*lstAsisten.DisplayMember = "nombreApellido";
-            lstAsisten.ValueMember = "codigoBombero";
-            lstAsisten.DataSource = dtBomberos;*/
+            AcomodarTitulo(); 
+             
         }
 
         public void AcomodarTitulo()
@@ -220,9 +207,11 @@ namespace Bomberos
         #endregion
 
         private void dgvBomberos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvBomberos.Columns["quitar"].Index)
             {
+                int codigo = Convert.ToInt32(dgvBomberos.Rows[e.RowIndex].Cells["codigo"].Value);
+                bomberosAsignados.RemoveAll(b => b.CodigoBombero == codigo);
                 dgvBomberos.Rows.RemoveAt(e.RowIndex);
             }
         }

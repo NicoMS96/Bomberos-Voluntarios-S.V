@@ -13,9 +13,9 @@ namespace Bomberos
 {
     public partial class formReuniones : Form
     {
-        public Form1 contenedor { get; set; }
+        public formPrincipal contenedor { get; set; }
         ReunionesLogica reuniones;
-        public formReuniones(Form1 Contenedor)
+        public formReuniones(formPrincipal Contenedor)
         {
             contenedor = Contenedor;
             InitializeComponent();
@@ -39,13 +39,15 @@ namespace Bomberos
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formPrincipal(contenedor));
+            this.Close();
+
         }
 
         private void btnNuevaReunion_Click(object sender, EventArgs e)
         {
             formAgregarModificarReunion reunion = new formAgregarModificarReunion("nueva",contenedor);
             reunion.ShowDialog();
+            ActualizarGrilla();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -56,12 +58,15 @@ namespace Bomberos
 
             if (resultado == DialogResult.Yes)
             {
-                int borrado = reuniones.EliminarReunion(idReunion);
-
-                if (borrado > 0)
+                 
+                if (reuniones.EliminarReunion(idReunion))
                 {
                     MessageBox.Show("Reunion borrada correctamente.");
                     ActualizarGrilla();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al borrar");
                 }
             }
         }

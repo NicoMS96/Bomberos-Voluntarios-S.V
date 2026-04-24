@@ -19,7 +19,7 @@ namespace Logica
             tareas = new TareasDatos();
         }
 
-        public DataTable ObtenerTareasPredeterminadas(int areaId)
+        public List<TareasPredeterminada> ObtenerTareasPredeterminadas(int areaId)
         {
             return tareas.ObtenerTareasPredeterminadas(areaId);
         }
@@ -39,9 +39,9 @@ namespace Logica
         }
          
 
-        public DataTable ObtenerTareas(int areaId)
+        public List<TareaVista> ObtenerTareasAreas(int areaId)
         {
-            return tareas.ObtenerTareas(areaId);
+            return tareas.ObtenerTareasAreas(areaId);
         }
     }
 }

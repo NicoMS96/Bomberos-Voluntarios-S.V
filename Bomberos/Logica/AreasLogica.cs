@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,10 +17,13 @@ namespace Logica
             areas = new AreasDatos();
         }
 
-        public DataTable ObtenerAreas()
+        public List<Area> ObtenerAreas()
         {
             return areas.ObtenerAreas();
+        } 
+        public List<Categoria> ObtenerCategorias()
+        {
+            return areas.ObtenerCategorias();
         }
-         
     }
 }

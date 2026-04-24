@@ -63,9 +63,9 @@ namespace Bomberos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alert1 {
+        internal static System.Drawing.Bitmap escudo {
             get {
-                object obj = ResourceManager.GetObject("alert1", resourceCulture);
+                object obj = ResourceManager.GetObject("escudo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,39 +73,9 @@ namespace Bomberos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alert2 {
+        internal static System.Drawing.Bitmap textos {
             get {
-                object obj = ResourceManager.GetObject("alert2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_pantalla_2024_08_27_010954 {
-            get {
-                object obj = ResourceManager.GetObject("Captura de pantalla 2024-08-27 010954", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap image {
-            get {
-                object obj = ResourceManager.GetObject("image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("images-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("textos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

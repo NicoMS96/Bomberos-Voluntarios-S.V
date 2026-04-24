@@ -10,5 +10,6 @@ namespace Models
     {
         public int CategoriaId { get; set; }    // Llave primaria
         public string CategoriaNombre { get; set; }    // Nombre de la categoría
+        public override string ToString() => CategoriaNombre;
     }
 }

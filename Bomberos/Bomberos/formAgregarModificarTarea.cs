@@ -14,36 +14,32 @@ namespace Bomberos
 {
     public partial class formAgregarModificarTarea : Form
     {
-        public string accion { get; set; }
-        int areaId;
-        int codigoBombero;
+        public string accion { get; set; } 
         TareasLogica tareas; 
         BomberosLogica bomberos;
-        public formAgregarModificarTarea(int codigoBombero)
+        public Bombero bombero;
+        public formAgregarModificarTarea(Bombero bombero)
         {
-            this.codigoBombero = codigoBombero;
+            this.bombero = bombero; 
             InitializeComponent();
             bomberos = new BomberosLogica();
             tareas = new TareasLogica(); 
         }
 
         private void formAgregarModificarTarea_Load(object sender, EventArgs e)
-        {
-            Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
-            string area = bombero.Area.AreaNombre;
-            areaId = bombero.Area.AreaId;
-
-            lblTitulo.Text = "NUEVA TAREA EN " + area;
+        {  
+            lblTitulo.Text = "NUEVA TAREA EN " + bombero.Area.AreaNombre;
 
             AcomodarTitulo();
             CargarCmb();
         }
         public void CargarCmb()
         {
-            cmbTareasPredeterminadas.DisplayMember = "tareaPredeterminada";
-            cmbTareasPredeterminadas.ValueMember = "tareasPredeterminadaId";
-            cmbTareasPredeterminadas.DataSource = tareas.ObtenerTareasPredeterminadas(areaId); 
+            cmbTareasPredeterminadas.DisplayMember = "TareaPredeterminada";
+            cmbTareasPredeterminadas.ValueMember = "TareasPredeterminadaId";
+            cmbTareasPredeterminadas.DataSource = tareas.ObtenerTareasPredeterminadas(bombero.Area.AreaId); 
         }
+
         public void AcomodarTitulo()
         {
             double mitadForm = this.Width / 2;
@@ -70,7 +66,7 @@ namespace Bomberos
                 },
                 Bombero = new Bombero()
                 {
-                    CodigoBombero = codigoBombero
+                    CodigoBombero = bombero.CodigoBombero
                 }
             };
              

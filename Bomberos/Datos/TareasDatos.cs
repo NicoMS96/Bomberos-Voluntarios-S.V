@@ -10,19 +10,34 @@ using System.Threading.Tasks;
 namespace Datos
 {
     public class TareasDatos
-    {
-        Conexion cn;
-
-        public TareasDatos()
+    {  
+        public List<TareasPredeterminada> ObtenerTareasPredeterminadas(int areaId)
         {
-            cn = new Conexion();
+            var lista = new List<TareasPredeterminada>();
+            using (var oConexion = new SqlConnection(Conexion.cn))
+            {
+                string query = $"SELECT * FROM TareasPredeterminadas WHERE areaId = @areaId OR areaId IS NULL ";
+                var cmd = new SqlCommand(query, oConexion);
+                cmd.CommandType = CommandType.Text; 
+                cmd.Parameters.AddWithValue("@areaId", areaId);
+
+                oConexion.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new TareasPredeterminada()
+                        {
+                            TareasPredeterminadaId = Convert.ToInt32(dr["TareasPredeterminadaId"]),
+                            TareaPredeterminada = dr["TareaPredeterminada"].ToString()
+                        });
+                           
+                    }
+                }
+            }
+            return lista;
         }
 
-        public DataTable ObtenerTareasPredeterminadas(int areaId)
-        {
-            string query = $"SELECT * FROM TareasPredeterminadas WHERE areaId = {areaId} OR areaId IS NULL ";
-            return cn.ObtenerRegistros(query);
-        }
 
         public bool GuardarTarea(Tarea t)
         {
@@ -47,13 +62,44 @@ namespace Datos
         }
 
 
-        public DataTable ObtenerTareas(int areaId)
+        public List<TareaVista> ObtenerTareasAreas(int areaId)
         {
-            string query = $@"SELECT b.codigoBombero AS 'CODIGO BOMBERO', CONCAT(b.nombre, ' ', b.apellido) AS BOMBERO, tp.tareaPredeterminada AS 'TAREA PREDETERMINADA', t.observaciones AS DETALLES from tareas t INNER JOIN TareasPredeterminadas tp ON t.tareasPredeterminadaId=tp.tareasPredeterminadaId
-                            INNER JOIN Bomberos b ON t.codigoBombero=b.codigoBombero
-                            INNER JOIN Areas a ON a.areaId=b.areaId
-                            WHERE b.areaId={areaId}";
-            return cn.ObtenerRegistros(query);
+            var lista = new List<TareaVista>();
+
+            using (var oConexion = new SqlConnection(Conexion.cn))
+            {
+                string query = @"SELECT t.tareaId,
+                         b.codigoBombero,
+                         CONCAT(b.nombre, ' ', b.apellido) AS bombero,
+                         tp.tareaPredeterminada,
+                         t.observaciones
+                         FROM Tareas t 
+                         INNER JOIN TareasPredeterminadas tp ON t.tareasPredeterminadaId = tp.tareasPredeterminadaId
+                         INNER JOIN Bomberos b ON t.codigoBombero = b.codigoBombero
+                         INNER JOIN Areas a ON a.areaId = b.areaId
+                         WHERE b.areaId = @areaId";
+
+                var cmd = new SqlCommand(query, oConexion);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@areaId", areaId);
+
+                oConexion.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new TareaVista()
+                        {
+                            TareaId = Convert.ToInt32(dr["tareaId"]),
+                            CodigoBombero = Convert.ToInt32(dr["codigoBombero"]),
+                            Bombero = dr["bombero"].ToString(),
+                            TareaPredeterminada = dr["tareaPredeterminada"].ToString(),
+                            Detalles = dr["observaciones"].ToString()
+                        });
+                    }
+                }
+            }
+            return lista;
         }
     }
 }

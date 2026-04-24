@@ -45,7 +45,7 @@ namespace Bomberos
             // 
             // pnlSubtitulo
             // 
-            this.pnlSubtitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlSubtitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.pnlSubtitulo.Controls.Add(this.lblTitulo);
             this.pnlSubtitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubtitulo.Location = new System.Drawing.Point(0, 0);
@@ -56,57 +56,66 @@ namespace Bomberos
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.lblTitulo.Location = new System.Drawing.Point(17, 5);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(314, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(311, 28);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "INGRESAR A ADMINISTRACION";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtCodigo.ForeColor = System.Drawing.Color.White;
             this.txtCodigo.Location = new System.Drawing.Point(11, 80);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(324, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(324, 29);
             this.txtCodigo.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label1.Location = new System.Drawing.Point(9, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 20);
+            this.label1.Size = new System.Drawing.Size(171, 21);
             this.label1.TabIndex = 31;
             this.label1.Text = "CODIGO DE BOMBERO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.label2.Location = new System.Drawing.Point(9, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 20);
+            this.label2.Size = new System.Drawing.Size(111, 21);
             this.label2.TabIndex = 31;
             this.label2.Text = "CONTRASEÑA";
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.txtContrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(63)))));
+            this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtContrasena.ForeColor = System.Drawing.Color.White;
             this.txtContrasena.Location = new System.Drawing.Point(11, 146);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(324, 26);
+            this.txtContrasena.Size = new System.Drawing.Size(324, 29);
             this.txtContrasena.TabIndex = 32;
             // 
             // btnIngresar
             // 
             this.btnIngresar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(54, 219);
+            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnIngresar.Location = new System.Drawing.Point(54, 191);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(235, 58);
             this.btnIngresar.TabIndex = 33;
@@ -132,7 +141,7 @@ namespace Bomberos
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(347, 289);
+            this.ClientSize = new System.Drawing.Size(347, 261);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.lblVerificar);
@@ -143,7 +152,7 @@ namespace Bomberos
             this.ForeColor = System.Drawing.Color.White;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(363, 328);
-            this.MinimumSize = new System.Drawing.Size(363, 328);
+            this.MinimumSize = new System.Drawing.Size(363, 300);
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlSubtitulo.ResumeLayout(false);

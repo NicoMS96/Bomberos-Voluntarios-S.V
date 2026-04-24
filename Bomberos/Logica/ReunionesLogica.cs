@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,18 +23,18 @@ namespace Logica
             return reunionesDatos.AgregarReunion(reunion);
         }
 
-        public int BomberosReunion(int codigoReunion,int codigoBombero)
+        public bool BomberosReunion(int codigoReunion,int codigoBombero)
         {
 
             return reunionesDatos.BomberosReunion(codigoReunion, codigoBombero);
         }
 
-        public DataTable ObtenerReuniones()
+        public List<ReunionVista> ObtenerReuniones()
         {
             return reunionesDatos.ObtenerReuniones();
         }
 
-        public int EliminarReunion(int idReunion)
+        public bool EliminarReunion(int idReunion)
         {
             return reunionesDatos.EliminarReunion(idReunion);
         }

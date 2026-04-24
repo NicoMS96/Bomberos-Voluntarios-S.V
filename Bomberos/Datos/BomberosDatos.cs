@@ -11,17 +11,8 @@ namespace Datos
 {
     public class BomberosDatos
     {
-        Conexion cn;
-        public BomberosDatos()
-        {
-            cn = new Conexion();
-        }
-        public DataTable ObtenerBomberos()
-        {
-            string query = "SELECT * FROM Bomberos";
-            return cn.ObtenerRegistros(query);
-        }
-        public List<Bombero> ObtenerBomberos(int activo)
+
+        public List<Bombero> ObtenerBomberos(bool activo)
         { 
             var lista = new List<Bombero>();
             try
@@ -56,13 +47,15 @@ namespace Datos
                                 Activo = Convert.ToBoolean(dr["activo"]),
                                 Area = new Area()
                                 {
-                                    AreaId = Convert.ToInt32(dr["areaId"])
+                                    AreaId = Convert.ToInt32(dr["areaId"]),
+                                    AreaNombre = dr["area"].ToString()
                                 },
                                 Categoria = new Categoria()
                                 {
-                                    CategoriaId = Convert.ToInt32(dr["categoriaId"])
+                                    CategoriaId = Convert.ToInt32(dr["categoriaId"]),
+                                     CategoriaNombre= dr["categoria"].ToString()
                                 }
-                            });
+                            }); 
                         }
                     }
                 }
@@ -104,12 +97,14 @@ namespace Datos
                                 Activo = Convert.ToBoolean(dr["activo"]),
                                 Area = new Area()
                                 {
-                                    AreaId = Convert.ToInt32(dr["areaId"])
+                                    AreaId = Convert.ToInt32(dr["areaId"]),
+                                    AreaNombre = dr["area"].ToString()
                                 },
                                 Categoria = new Categoria()
                                 {
-                                    CategoriaId = Convert.ToInt32(dr["categoriaId"])
-                                } 
+                                    CategoriaId = Convert.ToInt32(dr["categoriaId"]),
+                                    CategoriaNombre = dr["categoria"].ToString()
+                                }
                             };
                         }
                     }
@@ -118,46 +113,85 @@ namespace Datos
             catch { bombero = null; }
             return bombero; 
         }
-        
 
-        public DataTable ObtenerAreas()
+
+
+        public bool NuevoBombero(Bombero bombero)
         {
-            string query = "SELECT * FROM Areas";
+            using (var oConexion = new SqlConnection(Conexion.cn))
+            {
+                string query = @"INSERT INTO Bomberos(nombre, apellido, dni, contrasena, permisos, activo, areaId, categoriaId) " +
+                "VALUES(@nombre, @apellido, @dni,@contrasena, @permisos,1,@areaId,@categoriaId)";
 
-            return cn.ObtenerRegistros(query);
-        }
+                var cmd = new SqlCommand(query, oConexion);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@nombre", bombero.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", bombero.Apellido);
+                cmd.Parameters.AddWithValue("@dni", bombero.Dni);
+                cmd.Parameters.AddWithValue("@contrasena", bombero.Contrasena);
+                cmd.Parameters.AddWithValue("@permisos", bombero.Permisos);
+                cmd.Parameters.AddWithValue("@areaId", bombero.Area.AreaId);
+                cmd.Parameters.AddWithValue("@categoriaId", bombero.Categoria.CategoriaId);
 
-        public DataTable ObtenerCategorias()
-        {
-            string query = "SELECT * FROM Categorias";
 
-            return cn.ObtenerRegistros(query);
-        }
+                oConexion.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
 
-        public int NuevoBombero(Bombero bombero)
-        {
-            string query = $"INSERT INTO Bomberos VALUES('{bombero.Nombre}','{bombero.Apellido}','{bombero.Dni}','{bombero.Contrasena}',{(bombero.Permisos)},1,{bombero.Area.AreaId},{bombero.Categoria.CategoriaId})";
-            return cn.EjecutarAccion(query);
-        }
-
-        public int ModificarBombero(Bombero bombero, int codigoBombero)
-        {
-            string query = $@"UPDATE Bomberos SET nombre='{bombero.Nombre}',
-                                apellido='{bombero.Apellido}',
-                                dni='{bombero.Dni}',
-                                contrasena='{bombero.Contrasena}',
-                                permisos='{bombero.Permisos}',
-                                activo='{bombero.Activo}',
-                                areaId='{bombero.Area.AreaId}',
-                                categoriaId='{bombero.Categoria.CategoriaId}' WHERE codigoBombero={codigoBombero}";
-            return cn.EjecutarAccion(query);
 
         }
 
-        public int AlternarActividad(int activo, int id)
+        public bool ModificarBombero(Bombero bombero)
         {
-            string query = $"UPDATE Bomberos SET activo={activo} WHERE codigoBombero={id}";
-            return cn.EjecutarAccion(query); 
+            using (var oConexion = new SqlConnection(Conexion.cn))
+            {
+                string query = @"UPDATE Bomberos SET
+                                     nombre      = @nombre,
+                                     apellido    = @apellido,
+                                     dni         = @dni,
+                                     contrasena  = @contrasena,
+                                     permisos    = @permisos,
+                                     activo      = @activo,
+                                     areaId      = @areaId,
+                                     categoriaId = @categoriaId
+                                     WHERE codigoBombero = @codigoBombero";
+
+                var cmd = new SqlCommand(query, oConexion);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@nombre", bombero.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", bombero.Apellido);
+                cmd.Parameters.AddWithValue("@dni", bombero.Dni);
+                cmd.Parameters.AddWithValue("@contrasena", bombero.Contrasena);
+                cmd.Parameters.AddWithValue("@permisos", bombero.Permisos);
+                cmd.Parameters.AddWithValue("@activo", bombero.Activo);
+                cmd.Parameters.AddWithValue("@areaId", bombero.Area.AreaId);
+                cmd.Parameters.AddWithValue("@categoriaId", bombero.Categoria.CategoriaId);
+                cmd.Parameters.AddWithValue("@codigoBombero", bombero.CodigoBombero);
+
+                oConexion.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+
+        }
+
+        public bool AlternarActividad(int activo, int id)
+        {   
+            try
+            {
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = "UPDATE Bomberos SET activo=@activo WHERE codigoBombero=@id";
+
+                    var cmd = new SqlCommand(query, oConexion);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@activo", activo);
+                    cmd.Parameters.AddWithValue("@id", id); 
+
+                    oConexion.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch { return false; }
         }
 
 

@@ -14,8 +14,8 @@ namespace Bomberos
     public partial class formPersonal : Form
     {
         BomberosLogica bomberosLogica;
-        Form1 contenedor { get; set; }
-        public formPersonal(Form1 principal)
+        formPrincipal contenedor { get; set; }
+        public formPersonal(formPrincipal principal)
         {
             contenedor = principal;
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Bomberos
 
         private void btnNuevoBombero_Click(object sender, EventArgs e)
         {
-            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal("agregar",0,contenedor,this);
+            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal(0);
             formAgregarPersonal.ShowDialog();
             ActualizarGrilla();
         }
@@ -59,7 +59,7 @@ namespace Bomberos
         private void btnModificar_Click(object sender, EventArgs e)
         {
             int codigoBombero = Convert.ToInt32(dgvPersonal.SelectedRows[0].Cells[0].Value);
-            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal("modificar", codigoBombero,contenedor,this);
+            formAgregarModificarPersonal formAgregarPersonal = new formAgregarModificarPersonal(codigoBombero);
             formAgregarPersonal.ShowDialog();
             ActualizarGrilla(); 
         }
@@ -73,11 +73,11 @@ namespace Bomberos
         {
             
             if (rdbActivo.Checked)
-                dgvPersonal.DataSource = bomberosLogica.ObtenerBomberos(1);
+                dgvPersonal.DataSource = bomberosLogica.ObtenerBomberos(true);
             else
-                dgvPersonal.DataSource = bomberosLogica.ObtenerBomberos(0);
+                dgvPersonal.DataSource = bomberosLogica.ObtenerBomberos(false);
 
-            
+             
             dgvPersonal.Columns[4].Visible = false;
             dgvPersonal.Columns[7].Visible = false;
 

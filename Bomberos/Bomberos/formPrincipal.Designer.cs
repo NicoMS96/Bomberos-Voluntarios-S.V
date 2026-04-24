@@ -40,7 +40,17 @@ namespace Bomberos
             this.btnAdministracion = new System.Windows.Forms.Button();
             this.btnAreas = new System.Windows.Forms.Button();
             this.pnlFecha = new System.Windows.Forms.Panel();
+            this.PanelIzquierdo = new System.Windows.Forms.Panel();
+            this.PanelBotRojo = new System.Windows.Forms.Panel();
+            this.PanelTopRojo = new System.Windows.Forms.Panel();
+            this.tableLayoutLogo = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxEscudo = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTextos = new System.Windows.Forms.PictureBox();
             this.pnlFecha.SuspendLayout();
+            this.PanelIzquierdo.SuspendLayout();
+            this.tableLayoutLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEscudo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTextos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalida
@@ -51,7 +61,7 @@ namespace Bomberos
             this.btnSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalida.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSalida.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSalida.Location = new System.Drawing.Point(652, 264);
+            this.btnSalida.Location = new System.Drawing.Point(802, 274);
             this.btnSalida.Name = "btnSalida";
             this.btnSalida.Size = new System.Drawing.Size(200, 71);
             this.btnSalida.TabIndex = 4;
@@ -67,7 +77,7 @@ namespace Bomberos
             this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngreso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngreso.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnIngreso.Location = new System.Drawing.Point(444, 264);
+            this.btnIngreso.Location = new System.Drawing.Point(594, 274);
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Size = new System.Drawing.Size(200, 71);
             this.btnIngreso.TabIndex = 5;
@@ -83,7 +93,7 @@ namespace Bomberos
             this.btnSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSemana.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSemana.Location = new System.Drawing.Point(444, 341);
+            this.btnSemana.Location = new System.Drawing.Point(594, 351);
             this.btnSemana.Name = "btnSemana";
             this.btnSemana.Size = new System.Drawing.Size(408, 71);
             this.btnSemana.TabIndex = 7;
@@ -128,7 +138,7 @@ namespace Bomberos
             this.btnReuniones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReuniones.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnReuniones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnReuniones.Location = new System.Drawing.Point(490, 442);
+            this.btnReuniones.Location = new System.Drawing.Point(657, 452);
             this.btnReuniones.Name = "btnReuniones";
             this.btnReuniones.Size = new System.Drawing.Size(220, 57);
             this.btnReuniones.TabIndex = 9;
@@ -144,7 +154,7 @@ namespace Bomberos
             this.btnAdministracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministracion.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnAdministracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnAdministracion.Location = new System.Drawing.Point(731, 442);
+            this.btnAdministracion.Location = new System.Drawing.Point(898, 452);
             this.btnAdministracion.Name = "btnAdministracion";
             this.btnAdministracion.Size = new System.Drawing.Size(211, 57);
             this.btnAdministracion.TabIndex = 8;
@@ -160,7 +170,7 @@ namespace Bomberos
             this.btnAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAreas.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnAreas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnAreas.Location = new System.Drawing.Point(272, 442);
+            this.btnAreas.Location = new System.Drawing.Point(439, 452);
             this.btnAreas.Name = "btnAreas";
             this.btnAreas.Size = new System.Drawing.Size(195, 57);
             this.btnAreas.TabIndex = 6;
@@ -172,10 +182,77 @@ namespace Bomberos
             // 
             this.pnlFecha.Controls.Add(this.lblHora);
             this.pnlFecha.Controls.Add(this.lblDia);
-            this.pnlFecha.Location = new System.Drawing.Point(370, 12);
+            this.pnlFecha.Location = new System.Drawing.Point(520, 22);
             this.pnlFecha.Name = "pnlFecha";
             this.pnlFecha.Size = new System.Drawing.Size(538, 288);
             this.pnlFecha.TabIndex = 10;
+            // 
+            // PanelIzquierdo
+            // 
+            this.PanelIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            this.PanelIzquierdo.Controls.Add(this.tableLayoutLogo);
+            this.PanelIzquierdo.Controls.Add(this.PanelTopRojo);
+            this.PanelIzquierdo.Controls.Add(this.PanelBotRojo);
+            this.PanelIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelIzquierdo.Location = new System.Drawing.Point(0, 0);
+            this.PanelIzquierdo.Name = "PanelIzquierdo";
+            this.PanelIzquierdo.Size = new System.Drawing.Size(310, 571);
+            this.PanelIzquierdo.TabIndex = 11;
+            // 
+            // PanelBotRojo
+            // 
+            this.PanelBotRojo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PanelBotRojo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelBotRojo.Location = new System.Drawing.Point(0, 563);
+            this.PanelBotRojo.Name = "PanelBotRojo";
+            this.PanelBotRojo.Size = new System.Drawing.Size(310, 8);
+            this.PanelBotRojo.TabIndex = 0;
+            // 
+            // PanelTopRojo
+            // 
+            this.PanelTopRojo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PanelTopRojo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTopRojo.Location = new System.Drawing.Point(0, 0);
+            this.PanelTopRojo.Name = "PanelTopRojo";
+            this.PanelTopRojo.Size = new System.Drawing.Size(310, 8);
+            this.PanelTopRojo.TabIndex = 1;
+            // 
+            // tableLayoutLogo
+            // 
+            this.tableLayoutLogo.ColumnCount = 1;
+            this.tableLayoutLogo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutLogo.Controls.Add(this.pictureBoxEscudo, 0, 0);
+            this.tableLayoutLogo.Controls.Add(this.pictureBoxTextos, 0, 1);
+            this.tableLayoutLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutLogo.Location = new System.Drawing.Point(0, 8);
+            this.tableLayoutLogo.Name = "tableLayoutLogo";
+            this.tableLayoutLogo.RowCount = 2;
+            this.tableLayoutLogo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutLogo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutLogo.Size = new System.Drawing.Size(310, 555);
+            this.tableLayoutLogo.TabIndex = 2;
+            // 
+            // pictureBoxEscudo
+            // 
+            this.pictureBoxEscudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxEscudo.Image = global::Bomberos.Properties.Resources.escudo;
+            this.pictureBoxEscudo.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxEscudo.Name = "pictureBoxEscudo";
+            this.pictureBoxEscudo.Size = new System.Drawing.Size(304, 327);
+            this.pictureBoxEscudo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEscudo.TabIndex = 0;
+            this.pictureBoxEscudo.TabStop = false;
+            // 
+            // pictureBoxTextos
+            // 
+            this.pictureBoxTextos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxTextos.Image = global::Bomberos.Properties.Resources.textos;
+            this.pictureBoxTextos.Location = new System.Drawing.Point(3, 336);
+            this.pictureBoxTextos.Name = "pictureBoxTextos";
+            this.pictureBoxTextos.Size = new System.Drawing.Size(304, 216);
+            this.pictureBoxTextos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTextos.TabIndex = 1;
+            this.pictureBoxTextos.TabStop = false;
             // 
             // formPrincipal
             // 
@@ -183,6 +260,7 @@ namespace Bomberos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1264, 571);
+            this.Controls.Add(this.PanelIzquierdo);
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.btnAreas);
@@ -191,12 +269,17 @@ namespace Bomberos
             this.Controls.Add(this.btnReuniones);
             this.Controls.Add(this.pnlFecha);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "formPrincipal";
-            this.Text = "formPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "BOMBEROS VOLUNTARIOS S.V.";
             this.Load += new System.EventHandler(this.formPrincipal_Load);
             this.pnlFecha.ResumeLayout(false);
             this.pnlFecha.PerformLayout();
+            this.PanelIzquierdo.ResumeLayout(false);
+            this.tableLayoutLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEscudo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTextos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +296,11 @@ namespace Bomberos
         private System.Windows.Forms.Button btnAdministracion;
         private System.Windows.Forms.Button btnAreas;
         private System.Windows.Forms.Panel pnlFecha;
+        private System.Windows.Forms.Panel PanelIzquierdo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutLogo;
+        private System.Windows.Forms.PictureBox pictureBoxEscudo;
+        private System.Windows.Forms.PictureBox pictureBoxTextos;
+        private System.Windows.Forms.Panel PanelTopRojo;
+        private System.Windows.Forms.Panel PanelBotRojo;
     }
 }

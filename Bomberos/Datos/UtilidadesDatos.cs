@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 namespace Datos
 {
     class UtilidadesDatos
-    {
-        Conexion cn;
-        public UtilidadesDatos()
-        {
-            cn = new Conexion();
-        }
+    { 
 
     }
 }

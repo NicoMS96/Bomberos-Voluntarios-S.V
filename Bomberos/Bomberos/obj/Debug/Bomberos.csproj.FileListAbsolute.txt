@@ -136,7 +136,6 @@ D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Logica.p
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Models.pdb
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\Datos.pdb
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.AssemblyReference.cache
-D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.Form1.resources
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAdministracion.resources
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarEmergencia.resources
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAgregarModificarPersonal.resources
@@ -156,3 +155,12 @@ D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.csproj.CopyComplete
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.exe
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.pdb
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\ExCSS.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Buffers.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Memory.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Numerics.Vectors.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Buffers.xml
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Memory.xml
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Numerics.Vectors.xml
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

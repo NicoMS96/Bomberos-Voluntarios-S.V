@@ -1,5 +1,6 @@
 ﻿using Datos;
 using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,11 +23,11 @@ namespace Logica
             return emergenciasDatos.AgregarEmergencia(emergencia);
         }
 
-        public int BomberosEmergencias(int codigoEmergencia, int codigoBombero)
+        public bool BomberosEmergencias(int codigoEmergencia, int codigoBombero)
         {
             return emergenciasDatos.BomberosEmergencias(codigoEmergencia, codigoBombero);
         }
-        public DataTable ObtenerEmergencias()
+        public List<EmergenciaVista> ObtenerEmergencias()
         {
             return emergenciasDatos.ObtenerEmergencias();
         }

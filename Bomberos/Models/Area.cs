@@ -10,5 +10,6 @@ namespace Models
     {
         public int AreaId { get; set; }         // Llave primaria
         public string AreaNombre { get; set; } // Nombre del área
+        public override string ToString() => AreaNombre;
     }
 }

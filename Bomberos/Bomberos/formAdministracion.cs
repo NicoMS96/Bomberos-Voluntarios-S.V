@@ -12,9 +12,9 @@ namespace Bomberos
 {
     public partial class formAdministracion : Form
     {
-        public Form1 contenedor { get; set; } 
+        public formPrincipal contenedor { get; set; } 
         public int codigoBombero { get; set; }
-        public formAdministracion(Form1 principal, int codigoBombero)
+        public formAdministracion(formPrincipal principal, int codigoBombero)
         {
             this.codigoBombero = codigoBombero;
             contenedor = principal;
@@ -37,7 +37,7 @@ namespace Bomberos
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formPrincipal(contenedor));
+            //contenedor.AbrirFormulario(new formPrincipal(contenedor));
         }
 
         private void btnAsistArea_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace Bomberos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formPrincipal(contenedor));
+          //  contenedor.AbrirFormulario(new formPrincipal(contenedor));
         }
 
         private void btnAsistencias_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace Bomberos
 
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
-            contenedor.AbrirFormulario(new formPrincipal(contenedor));
+            this.Close(); 
         }
 
         private void btnAsistencias_Paint(object sender, PaintEventArgs e)

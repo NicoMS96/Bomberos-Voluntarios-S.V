@@ -15,9 +15,9 @@ namespace Bomberos
     public partial class formLogin : Form
     {
         BomberosLogica bomberos;
-        Form1 contenedor { get; set; }
+        formPrincipal contenedor { get; set; }
         string modulo;
-        public formLogin(string modulo, Form1 contenedor)
+        public formLogin(string modulo, formPrincipal contenedor)
         {
             InitializeComponent();
             this.contenedor = contenedor;
@@ -53,7 +53,7 @@ namespace Bomberos
 
             if (codigoBombero != 0)
             {
-                if (bombero.Activo)
+                if (!bombero.Activo)
                 {
                     errorProvider1.SetError(txtCodigo, "El codigo ingresado es de un bombero inactivo.");
                     return false;
@@ -71,10 +71,11 @@ namespace Bomberos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
             if (validaciones(out int codigoBombero))
             {
-                DataTable dtBomberos = bomberos.ObtenerBomberos();
-                if (dtBomberos.Rows.Count > 0)
+                List<Bombero> dtBomberos = bomberos.ObtenerBomberos(true);
+                if (dtBomberos.Count > 0)
                 {
                     Bombero bombero = bomberos.ObtenerBombero(codigoBombero);
 
@@ -89,7 +90,7 @@ namespace Bomberos
                                     contenedor.AbrirFormulario(new formAdministracion(contenedor, codigoBombero));
 
                                 if (modulo == "AREAS")
-                                    contenedor.AbrirFormulario(new formAreas(contenedor, codigoBombero));
+                                    contenedor.AbrirFormulario(new formAreas(contenedor, bombero));
 
                                 this.Close();
 
