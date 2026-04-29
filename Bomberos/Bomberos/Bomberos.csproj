@@ -93,6 +93,12 @@
     <Compile Include="formAgregarModificarTarea.Designer.cs">
       <DependentUpon>formAgregarModificarTarea.cs</DependentUpon>
     </Compile>
+    <Compile Include="formAnularPunto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAnularPunto.Designer.cs">
+      <DependentUpon>formAnularPunto.cs</DependentUpon>
+    </Compile>
     <Compile Include="formAreas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formAgregarModificarTarea.resx">
       <DependentUpon>formAgregarModificarTarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAnularPunto.resx">
+      <DependentUpon>formAnularPunto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formAreas.resx">
       <DependentUpon>formAreas.cs</DependentUpon>

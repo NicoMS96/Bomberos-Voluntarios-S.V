@@ -37,11 +37,15 @@ namespace Logica
                 return ex.Message; 
             }
         }
-         
 
         public List<TareaVista> ObtenerTareasAreas(int areaId)
         {
             return tareas.ObtenerTareasAreas(areaId);
+        }
+
+        public bool AnularPunto(int tareaId, string observacion,int codigoBomberoId )
+        {
+            return tareas.AnularPunto(tareaId, observacion, codigoBomberoId);
         }
     }
 }

@@ -22,7 +22,6 @@ namespace Bomberos
             InitializeComponent();
             this.contenedor = contenedor;
             this.modulo = modulo;
-            lblTitulo.Text = "INGRESAR A " + modulo;
             bomberos = new BomberosLogica();
         }
 
@@ -120,6 +119,11 @@ namespace Bomberos
 
 
             }
+        }
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

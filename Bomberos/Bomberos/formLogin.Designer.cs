@@ -50,7 +50,7 @@ namespace Bomberos
             this.pnlSubtitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubtitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlSubtitulo.Name = "pnlSubtitulo";
-            this.pnlSubtitulo.Size = new System.Drawing.Size(347, 39);
+            this.pnlSubtitulo.Size = new System.Drawing.Size(232, 39);
             this.pnlSubtitulo.TabIndex = 30;
             // 
             // lblTitulo
@@ -58,11 +58,11 @@ namespace Bomberos
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.lblTitulo.Location = new System.Drawing.Point(17, 5);
+            this.lblTitulo.Location = new System.Drawing.Point(3, 6);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(311, 28);
+            this.lblTitulo.Size = new System.Drawing.Size(224, 28);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "INGRESAR A ADMINISTRACION";
+            this.lblTitulo.Text = "ACCESO RESTRINGIDO";
             // 
             // txtCodigo
             // 
@@ -72,7 +72,7 @@ namespace Bomberos
             this.txtCodigo.ForeColor = System.Drawing.Color.White;
             this.txtCodigo.Location = new System.Drawing.Point(11, 80);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(324, 29);
+            this.txtCodigo.Size = new System.Drawing.Size(209, 29);
             this.txtCodigo.TabIndex = 32;
             // 
             // label1
@@ -105,8 +105,9 @@ namespace Bomberos
             this.txtContrasena.ForeColor = System.Drawing.Color.White;
             this.txtContrasena.Location = new System.Drawing.Point(11, 146);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(324, 29);
+            this.txtContrasena.Size = new System.Drawing.Size(209, 29);
             this.txtContrasena.TabIndex = 32;
+            this.txtContrasena.UseSystemPasswordChar = true;
             // 
             // btnIngresar
             // 
@@ -115,9 +116,9 @@ namespace Bomberos
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnIngresar.Location = new System.Drawing.Point(54, 191);
+            this.btnIngresar.Location = new System.Drawing.Point(11, 189);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(235, 58);
+            this.btnIngresar.Size = new System.Drawing.Size(209, 53);
             this.btnIngresar.TabIndex = 33;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -141,7 +142,7 @@ namespace Bomberos
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(347, 261);
+            this.ClientSize = new System.Drawing.Size(232, 261);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.lblVerificar);
@@ -151,10 +152,9 @@ namespace Bomberos
             this.Controls.Add(this.pnlSubtitulo);
             this.ForeColor = System.Drawing.Color.White;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(363, 328);
-            this.MinimumSize = new System.Drawing.Size(363, 300);
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.formLogin_Load);
             this.pnlSubtitulo.ResumeLayout(false);
             this.pnlSubtitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

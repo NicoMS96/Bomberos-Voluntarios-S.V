@@ -101,5 +101,22 @@ namespace Datos
             }
             return lista;
         }
+
+        public bool AnularPunto(int tareaId, string observacion, int codigoBomberoId)
+        {
+
+                using (var oConexion = new SqlConnection(Conexion.cn))
+                {
+                    var cmd = new SqlCommand("sp_AnularPunto", oConexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@tareaId", tareaId);
+                    cmd.Parameters.AddWithValue("@observacion", observacion);
+                    cmd.Parameters.AddWithValue("@codigoBomberoId", codigoBomberoId);
+                    oConexion.Open();
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            
+        }
     }
 }

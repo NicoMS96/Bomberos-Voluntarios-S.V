@@ -29,10 +29,10 @@ namespace Bomberos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -113,7 +113,6 @@ namespace Bomberos
             this.btnGuardias.Text = "GUARDIAS";
             this.btnGuardias.UseVisualStyleBackColor = false;
             this.btnGuardias.Click += new System.EventHandler(this.btnGuardias_Click);
-            this.btnGuardias.Paint += new System.Windows.Forms.PaintEventHandler(this.btnGuardias_Paint);
             // 
             // btnAutomotores
             // 
@@ -131,7 +130,6 @@ namespace Bomberos
             this.btnAutomotores.Text = "AUTOMOTORES";
             this.btnAutomotores.UseVisualStyleBackColor = false;
             this.btnAutomotores.Click += new System.EventHandler(this.btnAutomotores_Click);
-            this.btnAutomotores.Paint += new System.Windows.Forms.PaintEventHandler(this.btnAutomotores_Paint);
             // 
             // btnVolver
             // 
@@ -149,7 +147,6 @@ namespace Bomberos
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            this.btnVolver.Paint += new System.Windows.Forms.PaintEventHandler(this.btnVolver_Paint);
             // 
             // btnRoperia
             // 
@@ -167,7 +164,6 @@ namespace Bomberos
             this.btnRoperia.Text = "ROPERIA";
             this.btnRoperia.UseVisualStyleBackColor = false;
             this.btnRoperia.Click += new System.EventHandler(this.btnRoperia_Click);
-            this.btnRoperia.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRoperia_Paint);
             // 
             // btnFurrieles
             // 
@@ -185,7 +181,6 @@ namespace Bomberos
             this.btnFurrieles.Text = "FURRIELES";
             this.btnFurrieles.UseVisualStyleBackColor = false;
             this.btnFurrieles.Click += new System.EventHandler(this.btnFurrieles_Click);
-            this.btnFurrieles.Paint += new System.Windows.Forms.PaintEventHandler(this.btnFurrieles_Paint);
             // 
             // btnCapacitacion
             // 
@@ -203,7 +198,6 @@ namespace Bomberos
             this.btnCapacitacion.Text = "CAPACITACION";
             this.btnCapacitacion.UseVisualStyleBackColor = false;
             this.btnCapacitacion.Click += new System.EventHandler(this.btnCapacitacion_Click);
-            this.btnCapacitacion.Paint += new System.Windows.Forms.PaintEventHandler(this.btnCapacitacion_Paint);
             // 
             // btnTaller
             // 
@@ -221,7 +215,6 @@ namespace Bomberos
             this.btnTaller.Text = "TALLER";
             this.btnTaller.UseVisualStyleBackColor = false;
             this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
-            this.btnTaller.Paint += new System.Windows.Forms.PaintEventHandler(this.btnTaller_Paint);
             // 
             // btnEdificio
             // 
@@ -239,7 +232,6 @@ namespace Bomberos
             this.btnEdificio.Text = "EDIFICIO";
             this.btnEdificio.UseVisualStyleBackColor = false;
             this.btnEdificio.Click += new System.EventHandler(this.btnEdificio_Click);
-            this.btnEdificio.Paint += new System.Windows.Forms.PaintEventHandler(this.btnEdificio_Paint);
             // 
             // pnlAreas
             // 
@@ -258,11 +250,11 @@ namespace Bomberos
             // btnAgregarTarea
             // 
             this.btnAgregarTarea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnAgregarTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
             this.btnAgregarTarea.FlatAppearance.BorderSize = 0;
             this.btnAgregarTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarTarea.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarTarea.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAgregarTarea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(144)))));
             this.btnAgregarTarea.Location = new System.Drawing.Point(831, 488);
             this.btnAgregarTarea.Name = "btnAgregarTarea";
             this.btnAgregarTarea.Size = new System.Drawing.Size(168, 71);
@@ -274,13 +266,13 @@ namespace Bomberos
             // 
             // btnAnularPunto
             // 
-            this.btnAnularPunto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnularPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
+            this.btnAnularPunto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAnularPunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnAnularPunto.FlatAppearance.BorderSize = 0;
             this.btnAnularPunto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnAnularPunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnularPunto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnularPunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(144)))));
+            this.btnAnularPunto.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAnularPunto.Location = new System.Drawing.Point(12, 488);
             this.btnAnularPunto.Name = "btnAnularPunto";
             this.btnAnularPunto.Size = new System.Drawing.Size(168, 71);
@@ -296,9 +288,9 @@ namespace Bomberos
             this.dgvTareas.AllowUserToDeleteRows = false;
             this.dgvTareas.AllowUserToResizeColumns = false;
             this.dgvTareas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.dgvTareas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.dgvTareas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTareas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -306,23 +298,23 @@ namespace Bomberos
             this.dgvTareas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
             this.dgvTareas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTareas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTareas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTareas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTareas.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTareas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTareas.EnableHeadersVisualStyles = false;
             this.dgvTareas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.dgvTareas.Location = new System.Drawing.Point(12, 53);
@@ -331,12 +323,12 @@ namespace Bomberos
             this.dgvTareas.ReadOnly = true;
             this.dgvTareas.RowHeadersVisible = false;
             this.dgvTareas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTareas.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTareas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTareas.Size = new System.Drawing.Size(987, 429);
             this.dgvTareas.TabIndex = 9;

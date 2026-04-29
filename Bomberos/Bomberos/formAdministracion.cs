@@ -60,54 +60,18 @@ namespace Bomberos
         }
 
         private void btnAsistencias_Click(object sender, EventArgs e)
-        {
-            limpiarBotones(sender);
-
-            //AbrirForm(new formAsistencias());
+        { 
+            BotonSeleccionado((Button)sender); 
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
         {
-            limpiarBotones(sender);
+            BotonSeleccionado((Button)sender);
             AbrirForm(new formPersonal(contenedor));
 
         }
         // Variable para trackear cuál está activo
-        private Button btnActivo = null;
-        private void limpiarBotones(object sender)
-        {
-            btnActivo = sender as Button;
 
-            foreach (Button b in new[] { btnAsistencias, btnVolver, btnPersonal})
-                b.Invalidate();
-
-        }
-        // ── Método reutilizable para el Paint ──
-        private void PintarSidebarBtn(Button btn, PaintEventArgs e)
-        {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            if (btn == btnActivo)
-            {
-                // Fondo activo
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(138, 16, 16)), 0, 0, btn.Width, btn.Height);
-                // Línea izquierda
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(255, 68, 68)), 0, 0, 3, btn.Height);
-                // Texto
-                e.Graphics.DrawString(btn.Text, btn.Font, new SolidBrush(Color.FromArgb(255, 224, 224)),
-                    new RectangleF(10, 0, btn.Width - 10, btn.Height),
-                    new StringFormat { LineAlignment = StringAlignment.Center });
-            }
-            else
-            {
-                // Fondo inactivo
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(37, 37, 40)), 0, 0, btn.Width, btn.Height);
-                // Texto
-                e.Graphics.DrawString(btn.Text, btn.Font, new SolidBrush(Color.FromArgb(168, 168, 168)),
-                    new RectangleF(8, 0, btn.Width - 8, btn.Height),
-                    new StringFormat { LineAlignment = StringAlignment.Center });
-            }
-        }
         private void btnVolver_Paint(object sender, PaintEventArgs e)
         {
             Button btn = sender as Button;
@@ -134,17 +98,25 @@ namespace Bomberos
 
         private void btnAsistencias_Paint(object sender, PaintEventArgs e)
         {
-            PintarSidebarBtn(sender as Button, e);
+             
         }
 
         private void btnPersonal_Paint(object sender, PaintEventArgs e)
         {
-            PintarSidebarBtn(sender as Button, e);
+             
         }
 
         private void btnAgregarModifTarea_Click(object sender, EventArgs e)
-        { 
+        {
+            BotonSeleccionado((Button)sender); 
+        }
+        // ── Método reutilizable para el Paint ──
+        private void BotonSeleccionado(Button btn)
+        {
+            foreach (Button b in new[] { btnAsistencias, btnPersonal, btnAgregarModifTarea })
+                b.BackColor = Color.FromArgb(37, 37, 40);
 
+            btn.BackColor = Color.FromArgb(138, 16, 16);
         }
     }
 }

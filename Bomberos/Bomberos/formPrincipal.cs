@@ -43,7 +43,6 @@ namespace Bomberos
 
         private void formPrincipal_Load(object sender, EventArgs e)
         { 
-
             FechaHora();
         }
         

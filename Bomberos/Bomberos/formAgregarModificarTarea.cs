@@ -18,8 +18,10 @@ namespace Bomberos
         TareasLogica tareas; 
         BomberosLogica bomberos;
         public Bombero bombero;
-        public formAgregarModificarTarea(Bombero bombero)
+        private int _areaId { get; set; }
+        public formAgregarModificarTarea(Bombero bombero,int AreaId )
         {
+            _areaId = AreaId;
             this.bombero = bombero; 
             InitializeComponent();
             bomberos = new BomberosLogica();
@@ -37,7 +39,7 @@ namespace Bomberos
         {
             cmbTareasPredeterminadas.DisplayMember = "TareaPredeterminada";
             cmbTareasPredeterminadas.ValueMember = "TareasPredeterminadaId";
-            cmbTareasPredeterminadas.DataSource = tareas.ObtenerTareasPredeterminadas(bombero.Area.AreaId); 
+            cmbTareasPredeterminadas.DataSource = tareas.ObtenerTareasPredeterminadas(_areaId); 
         }
 
         public void AcomodarTitulo()

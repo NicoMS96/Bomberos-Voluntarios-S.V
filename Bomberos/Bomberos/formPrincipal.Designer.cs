@@ -41,11 +41,11 @@ namespace Bomberos
             this.btnAreas = new System.Windows.Forms.Button();
             this.pnlFecha = new System.Windows.Forms.Panel();
             this.PanelIzquierdo = new System.Windows.Forms.Panel();
-            this.PanelBotRojo = new System.Windows.Forms.Panel();
-            this.PanelTopRojo = new System.Windows.Forms.Panel();
             this.tableLayoutLogo = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxEscudo = new System.Windows.Forms.PictureBox();
             this.pictureBoxTextos = new System.Windows.Forms.PictureBox();
+            this.PanelTopRojo = new System.Windows.Forms.Panel();
+            this.PanelBotRojo = new System.Windows.Forms.Panel();
             this.pnlFecha.SuspendLayout();
             this.PanelIzquierdo.SuspendLayout();
             this.tableLayoutLogo.SuspendLayout();
@@ -199,24 +199,6 @@ namespace Bomberos
             this.PanelIzquierdo.Size = new System.Drawing.Size(310, 571);
             this.PanelIzquierdo.TabIndex = 11;
             // 
-            // PanelBotRojo
-            // 
-            this.PanelBotRojo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PanelBotRojo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelBotRojo.Location = new System.Drawing.Point(0, 563);
-            this.PanelBotRojo.Name = "PanelBotRojo";
-            this.PanelBotRojo.Size = new System.Drawing.Size(310, 8);
-            this.PanelBotRojo.TabIndex = 0;
-            // 
-            // PanelTopRojo
-            // 
-            this.PanelTopRojo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PanelTopRojo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTopRojo.Location = new System.Drawing.Point(0, 0);
-            this.PanelTopRojo.Name = "PanelTopRojo";
-            this.PanelTopRojo.Size = new System.Drawing.Size(310, 8);
-            this.PanelTopRojo.TabIndex = 1;
-            // 
             // tableLayoutLogo
             // 
             this.tableLayoutLogo.ColumnCount = 1;
@@ -254,6 +236,24 @@ namespace Bomberos
             this.pictureBoxTextos.TabIndex = 1;
             this.pictureBoxTextos.TabStop = false;
             // 
+            // PanelTopRojo
+            // 
+            this.PanelTopRojo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PanelTopRojo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTopRojo.Location = new System.Drawing.Point(0, 0);
+            this.PanelTopRojo.Name = "PanelTopRojo";
+            this.PanelTopRojo.Size = new System.Drawing.Size(310, 8);
+            this.PanelTopRojo.TabIndex = 1;
+            // 
+            // PanelBotRojo
+            // 
+            this.PanelBotRojo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PanelBotRojo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelBotRojo.Location = new System.Drawing.Point(0, 563);
+            this.PanelBotRojo.Name = "PanelBotRojo";
+            this.PanelBotRojo.Size = new System.Drawing.Size(310, 8);
+            this.PanelBotRojo.TabIndex = 0;
+            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,7 +269,7 @@ namespace Bomberos
             this.Controls.Add(this.btnReuniones);
             this.Controls.Add(this.pnlFecha);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimumSize = new System.Drawing.Size(1280, 610);
             this.Name = "formPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BOMBEROS VOLUNTARIOS S.V.";

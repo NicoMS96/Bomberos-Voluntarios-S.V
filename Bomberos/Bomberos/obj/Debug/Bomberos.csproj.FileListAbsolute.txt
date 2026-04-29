@@ -164,3 +164,4 @@ D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.B
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Memory.xml
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Numerics.Vectors.xml
 D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Proyectos\C# Window Forms\Bomberos FINAL\Bomberos\Bomberos\obj\Debug\Bomberos.formAnularPunto.resources
